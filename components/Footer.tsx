@@ -15,7 +15,12 @@ const servicesLinks = [
 
 const companyLinks = ["Careers", "Articles"];
 
-const legalLinks = ["Terms & Condition", "Privacy Policy", "Cookies Policy"];
+const legalLinks = [
+  { label: "Terms & Conditions", href: "/legal/terms-and-conditions" },
+  { label: "Privacy Policy", href: "/legal/privacy-policy" },
+  { label: "Cookie Policy", href: "/legal/cookie-policy" },
+  { label: "Data Processing Agreement", href: "/legal/data-processing-agreement" },
+];
 
 const offices = ["Dubai", "Riyadh", "Dublin", "West Palm Beach"];
 
@@ -118,14 +123,14 @@ export const Footer = (): JSX.Element => {
                     key={index}
                     className="inline-flex items-center gap-[var(--3-spacing-spacing-md)]"
                   >
-                    <a
-                      href="#"
+                    <Link
+                      href={link.href}
                       className="inline-flex items-center justify-center gap-[var(--3-spacing-spacing-sm)] hover:text-white transition-colors"
                     >
                       <span className="w-fit mt-[-1.00px] font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-1-color-modes-component-colors-utility-gray-utility-gray-200 text-[length:var(--text-md-semibold-font-size)] tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] whitespace-nowrap [font-style:var(--text-md-semibold-font-style)]">
-                        {link}
+                        {link.label}
                       </span>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

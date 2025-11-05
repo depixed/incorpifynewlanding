@@ -14,12 +14,12 @@ const navigationItems = [
 const servicesList = [
   { label: "Incorporation", href: "/services/incorporation" },
   { label: "Accounting & Tax", href: "/services/accounting-tax" },
-  { label: "Residency", href: "/services/residency" },
+  { label: "Visa & Residency", href: "/services/visa-residency" },
   { label: "Banking", href: "/services/banking" },
   { label: "Insurance", href: "/services/insurance" },
   { label: "Payroll", href: "/services/payroll" },
   { label: "Legal", href: "/services/legal" },
-  { label: "More", href: "/services/more" },
+  { label: "Other Services", href: "/services/other-services" },
 ];
 
 export const Header = (): JSX.Element => {

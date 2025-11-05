@@ -83,6 +83,7 @@
   --3-spacing-spacing-6xl: var(--primitives-spacing-12-48px);
   --3-spacing-spacing-6xl-duplicate: var(--primitives-spacing-12-48px-duplicate);
   --3-spacing-spacing-7xl: var(--primitives-spacing-16-64px);
+  --3-spacing-spacing-9xl: 96px;
   --3-spacing-spacing-11xl: 96px;
   --3-spacing-spacing-11xl-duplicate: 96px;
   
@@ -90,6 +91,8 @@
   --2-radius-radius-md: 8px;
   --2-radius-radius-md-duplicate: 8px;
   --2-radius-radius-lg: 8px;
+  --2-radius-radius-xl: 12px;
+  --2-radius-radius-3xl: 20px;
   --2-radius-radius-4xl: 24px;
   
   /* Container */
@@ -106,6 +109,14 @@
   --display-lg-semibold-line-height: 60px;
   --display-lg-semibold-letter-spacing: -0.02em;
   --display-lg-semibold-font-style: normal;
+  
+  /* Typography - Display MD Semibold */
+  --display-md-semibold-font-family: "Inter", Helvetica;
+  --display-md-semibold-font-size: 36px;
+  --display-md-semibold-font-weight: 600;
+  --display-md-semibold-line-height: 44px;
+  --display-md-semibold-letter-spacing: -0.72px;
+  --display-md-semibold-font-style: normal;
   
   /* Typography - Text MD Semibold */
   --text-md-semibold-font-family: "Inter", Helvetica;
@@ -130,6 +141,30 @@
   --text-sm-regular-font-weight: 400;
   --text-sm-regular-letter-spacing: 0px;
   --text-sm-regular-line-height: 20px;
+  
+  /* Typography - Text SM Medium */
+  --text-sm-medium-font-family: "Inter", Helvetica;
+  --text-sm-medium-font-size: 14px;
+  --text-sm-medium-font-style: normal;
+  --text-sm-medium-font-weight: 500;
+  --text-sm-medium-letter-spacing: 0px;
+  --text-sm-medium-line-height: 20px;
+  
+  /* Typography - Text MD Regular */
+  --text-md-regular-font-family: "Inter", Helvetica;
+  --text-md-regular-font-size: 16px;
+  --text-md-regular-font-style: normal;
+  --text-md-regular-font-weight: 400;
+  --text-md-regular-letter-spacing: 0px;
+  --text-md-regular-line-height: 24px;
+  
+  /* Typography - Text XL Semibold */
+  --text-xl-semibold-font-family: "Inter", Helvetica;
+  --text-xl-semibold-font-size: 20px;
+  --text-xl-semibold-font-style: normal;
+  --text-xl-semibold-font-weight: 600;
+  --text-xl-semibold-letter-spacing: 0px;
+  --text-xl-semibold-line-height: 30px;
   
   /* Typography - Text XS Semibold */
   --text-xs-semibold-font-size: 12px;
