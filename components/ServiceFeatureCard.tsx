@@ -168,11 +168,11 @@ export const ServiceFeatureCard: React.FC<ServiceFeatureCardProps> = ({
           />
 
           <Image
-            className="absolute top-1/2 -translate-y-1/2 right-0 md:right-[20px] w-[80%] md:w-[462px] h-auto"
+            className="absolute top-1/2 -translate-y-1/2 right-0 md:-right-[80px] w-[80%] md:w-[601px] h-auto"
             alt={`Dashboard interface showing ${category} features`}
             src={foregroundImage}
-            width={462}
-            height={405}
+            width={601}
+            height={527}
             priority
           />
         </div>

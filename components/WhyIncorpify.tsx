@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { PrimaryCTA } from "./PrimaryCTA";
 
@@ -10,6 +10,7 @@ interface FeatureCardProps {
   title: string;
   description: string;
   isActive?: boolean;
+  onClick?: () => void;
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({
@@ -18,6 +19,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   title,
   description,
   isActive = false,
+  onClick,
 }) => {
   const bgClass = isActive
     ? "bg-incorpify-primary"
@@ -30,7 +32,17 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
   return (
     <article
-      className={`flex items-start gap-5 md:gap-6 lg:gap-8 p-4 md:p-5 lg:pt-[var(--3-spacing-spacing-3xl)] lg:pr-[var(--3-spacing-spacing-3xl)] lg:pb-[var(--3-spacing-spacing-3xl)] lg:pl-[var(--3-spacing-spacing-3xl)] relative w-full rounded-2xl overflow-hidden ${shadowClass} bg-[linear-gradient(180deg,rgba(254,254,254,0.5)_0%,rgba(255,255,255,0.5)_100%)]`}
+      onClick={onClick}
+      className={`flex items-start gap-5 md:gap-6 lg:gap-8 p-4 md:p-5 lg:pt-[var(--3-spacing-spacing-3xl)] lg:pr-[var(--3-spacing-spacing-3xl)] lg:pb-[var(--3-spacing-spacing-3xl)] lg:pl-[var(--3-spacing-spacing-3xl)] relative w-full rounded-2xl overflow-hidden ${shadowClass} bg-[linear-gradient(180deg,rgba(254,254,254,0.5)_0%,rgba(255,255,255,0.5)_100%)] cursor-pointer transition-all hover:shadow-lg`}
+      role="button"
+      tabIndex={0}
+      aria-pressed={isActive}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onClick?.();
+        }
+      }}
     >
       <div
         className={`relative w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex-shrink-0 ${bgClass} rounded-full overflow-hidden border-[none] shadow-shadows-shadow-xs-skeuomorphic before:content-[''] before:absolute before:inset-0 before:p-0.5 before:rounded-full before:[background:linear-gradient(180deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none`}
@@ -61,40 +73,64 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   );
 };
 
+interface Feature {
+  id: string;
+  icon: string;
+  iconAlt: string;
+  title: string;
+  description: string;
+  image: string;
+  background?: string;
+  overlayImage?: string;
+}
+
 export const WhyIncorpify = (): JSX.Element => {
-  const features = [
+  const [activeFeatureId, setActiveFeatureId] = useState("3x-faster");
+
+  const features: Feature[] = [
     {
+      id: "3x-faster",
       icon: "/img/zap-fast.svg",
       iconAlt: "Zap fast",
       title: "3x Faster Setup",
       description:
         "Form your company with AI guidance, saving time and cutting costs.",
-      isActive: true,
+      image: "/img/why-choose-us/3x faster.png",
+      background: "/img/why-choose-us/bg Variant=1.png",
+      overlayImage: "/img/why-choose-us/with 3x faster.png",
     },
     {
+      id: "all-in-one",
       icon: "/img/intersect-square.svg",
       iconAlt: "Intersect square",
       title: "All-in-One Platform",
       description:
         "Manage everything from setup to scale in one seamless place.",
-      isActive: false,
+      image: "/img/why-choose-us/all in one.png",
+      background: "/img/why-choose-us/bg Variant=2.png",
     },
     {
+      id: "zero-paperwork",
       icon: "/img/file-check-03.svg",
       iconAlt: "File check",
       title: "Zero Paperwork, Full Clarity",
       description: "Streamline processes with complete transparency.",
-      isActive: false,
+      image: "/img/why-choose-us/zero paperwor.png",
+      background: "/img/why-choose-us/bg Variant=3.png",
     },
     {
+      id: "trusted",
       icon: "/img/heart-hand.svg",
       iconAlt: "Heart hand",
       title: "Trusted & Proven",
       description:
         "Backed by elite technology and trusted by 550+ satisfied clients.",
-      isActive: false,
+      image: "/img/why-choose-us/trusted and proven.png",
+      background: undefined, // No background for this one
     },
   ];
+
+  const activeFeature = features.find((f) => f.id === activeFeatureId) || features[0];
 
   return (
     <section
@@ -140,27 +176,66 @@ export const WhyIncorpify = (): JSX.Element => {
 
       {/* Content Section */}
       <div className="flex flex-col lg:flex-row w-full max-w-[1280px] items-start gap-6 md:gap-8 lg:gap-[var(--3-spacing-spacing-4xl-duplicate)] relative z-10">
-        {/* Image - Hidden on mobile, visible on tablet+ */}
+        {/* Dynamic Image with Background - Hidden on mobile, visible on tablet+ */}
         <div className="hidden md:block relative w-full lg:w-[616px] lg:flex-shrink-0">
-          <img
-            className="relative w-full h-auto"
-            alt="Incorpify platform interface showing AI-powered company formation features"
-            src="/img/image.svg"
-          />
+          <div className="relative w-full min-h-[616px]">
+            {/* Background Image (if exists) - Full Height */}
+            {activeFeature.background && (
+              <div className="absolute inset-0 z-0">
+                <Image
+                  className="w-full h-full object-cover"
+                  alt=""
+                  src={activeFeature.background}
+                  width={616}
+                  height={616}
+                  priority
+                  aria-hidden="true"
+                />
+              </div>
+            )}
+            {/* Feature Image */}
+            <div className="relative z-10">
+              <Image
+                key={activeFeatureId}
+                className="relative w-full h-auto transition-opacity duration-500 ease-in-out"
+                alt={`${activeFeature.title} - Incorpify platform feature`}
+                src={activeFeature.image}
+                width={616}
+                height={616}
+                priority
+              />
+            </div>
+            {/* Overlay Image (if exists) - Left Center */}
+            {activeFeature.overlayImage && (
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20">
+                <Image
+                  key={`overlay-${activeFeatureId}`}
+                  className="relative transition-opacity duration-500 ease-in-out"
+                  alt=""
+                  src={activeFeature.overlayImage}
+                  width={200}
+                  height={200}
+                  priority
+                  aria-hidden="true"
+                />
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Features and CTA Section */}
         <div className="flex flex-col gap-6 md:gap-8 lg:gap-[var(--3-spacing-spacing-4xl)] flex-1 w-full">
           {/* Feature Cards */}
           <div className="flex flex-col gap-4 md:gap-5 lg:gap-[var(--3-spacing-spacing-3xl)] w-full">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <FeatureCard
-                key={index}
+                key={feature.id}
                 icon={feature.icon}
                 iconAlt={feature.iconAlt}
                 title={feature.title}
                 description={feature.description}
-                isActive={feature.isActive}
+                isActive={feature.id === activeFeatureId}
+                onClick={() => setActiveFeatureId(feature.id)}
               />
             ))}
           </div>

@@ -7,28 +7,28 @@ export const OurUsers = (): JSX.Element => {
   const userCards = [
     {
       id: 1,
-      image: "/img/card.png",
+      image: "/img/our-users/Card 1.png",
       alt: "Card for Startups",
       title: "For Startups",
       description: "Set up lean and stay investor-ready from day one",
     },
     {
       id: 2,
-      image: "/img/card-1.png",
+      image: "/img/our-users/Card 2.png",
       alt: "Card for Consultant",
       title: "For Consultant",
       description: "Manage global operations and banking seamlessly",
     },
     {
       id: 3,
-      image: "/img/card-2.png",
+      image: "/img/our-users/Card 3.png",
       alt: "Card for SMEs",
       title: "For SMEs",
       description: "Control all company activities in one place",
     },
     {
       id: 4,
-      image: "/img/card-3.png",
+      image: "/img/our-users/Card 4.png",
       alt: "Card for Holding Structures",
       title: "For Holding Structures",
       description: "Manage cross-border entities compliantly",
@@ -84,28 +84,18 @@ export const OurUsers = (): JSX.Element => {
           className="flex flex-col md:flex-row h-auto md:h-[360px] items-stretch gap-4 md:gap-6 relative w-full"
           role="list"
         >
-          {userCards.map((card, index) => (
+          {userCards.map((card) => (
             <div
               key={card.id}
-              className={`relative ${
-                index === 0
-                  ? "flex-1 self-stretch grow"
-                  : index === 1
-                    ? "w-full md:w-[258px] md:h-[366px]"
-                    : index === 2
-                      ? "flex-1 self-stretch grow"
-                      : "flex-1 self-stretch grow"
-              }`}
+              className="relative flex-1 self-stretch grow"
               role="listitem"
             >
               <Image
-                className={`${
-                  index === 1 ? "w-full h-full" : "w-full h-full object-cover"
-                } rounded-xl md:rounded-2xl`}
+                className="w-full h-full object-cover rounded-xl md:rounded-2xl"
                 alt={card.alt}
                 src={card.image}
-                width={index === 1 ? 258 : 300}
-                height={index === 1 ? 366 : 360}
+                width={300}
+                height={360}
                 priority
               />
             </div>
