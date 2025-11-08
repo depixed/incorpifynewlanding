@@ -20,21 +20,6 @@ export const IncorporationFeaturedTitle = (): JSX.Element => {
           our AI recommends the ideal jurisdiction with clear timelines, setup
           costs, and key benefits.
         </p>
-
-        {/* Decorative sparkle icons - positioned absolutely on larger screens */}
-        <img
-          className="hidden lg:block absolute top-[172px] left-[688px] w-[60px] h-[60px]"
-          alt=""
-          src="/img/component-4.svg"
-          aria-hidden="true"
-        />
-
-        <img
-          className="hidden lg:block absolute top-[-58px] left-[116px] w-[60px] h-[60px]"
-          alt=""
-          src="/img/component-6.svg"
-          aria-hidden="true"
-        />
       </div>
 
       {/* Decorative concentric circles */}
@@ -50,7 +35,16 @@ export const IncorporationFeaturedTitle = (): JSX.Element => {
 
         <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[38.68%] h-[38.6%] rounded-[50%] border border-solid border-incorpifysecondary shadow-[0px_-0.39px_24.74px_#00000008] backdrop-blur-[11.6px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(11.6px)_brightness(100%)]" />
 
-        <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full h-full rounded-[50%] border border-solid border-incorpifysecondary shadow-[0px_-0.39px_24.74px_#00000008] backdrop-blur-[11.6px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(11.6px)_brightness(100%)]" />
+        <div 
+          className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full h-full rounded-[50%] border border-solid border-incorpifysecondary shadow-[0px_-0.39px_24.74px_#00000008] backdrop-blur-[11.6px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(11.6px)_brightness(100%)]"
+          style={{
+            backgroundImage: `url('/img/tell-us-about-your-business.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.8
+          }}
+        />
       </div>
     </section>
   );

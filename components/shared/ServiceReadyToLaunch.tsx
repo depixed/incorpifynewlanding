@@ -139,9 +139,9 @@ export const ServiceReadyToLaunch = ({
 
           {/* Image - Right Side */}
           <div className="relative flex-1 z-10 hidden lg:block">
-            <figure className="inline-flex p-[8.23px] bg-[#1d183433] rounded-[16.46px] overflow-hidden border-[0.69px] border-solid border-incorpifyprimary flex-col items-start">
+            <figure className="inline-flex p-[8.23px] bg-[#1d183433] rounded-[16.46px] overflow-hidden border-[0.69px] border-solid border-incorpifyprimary flex-col items-start w-full">
               <img
-                className="relative w-full max-w-[432.05px] h-auto object-cover"
+                className="relative w-full h-auto object-contain rounded"
                 alt={image.alt}
                 src={image.src}
               />

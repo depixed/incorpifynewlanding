@@ -15,25 +15,25 @@ export const IncorporationJurisdiction = (): JSX.Element => {
       id: "uae-mainland",
       title: "UAE Mainland",
       description: "Full local access with wide legal freedom",
-      backgroundImage: "/img/card.png",
+      backgroundImage: "/img/incorporation-jurisdiction-card-1.png",
     },
     {
       id: "uae-freezone",
       title: "UAE Freezone",
       description: "100% ownership, minimal taxes",
-      backgroundImage: "/img/card-1.png",
+      backgroundImage: "/img/incorporation-jurisdiction-card-2.png",
     },
     {
       id: "saudi-arabia",
       title: "Saudi Arabia",
       description: "Tap into the fastest-growing GCC economy",
-      backgroundImage: "/img/card-2.png",
+      backgroundImage: "/img/incorporation-jurisdiction-card-3.png",
     },
     {
       id: "kuwait",
       title: "Kuwait",
       description: "Gateway to GCC markets with strong financial stability",
-      backgroundImage: "/img/card-3.png",
+      backgroundImage: "/img/incorporation-jurisdiction-card-4.png",
     },
   ];
 

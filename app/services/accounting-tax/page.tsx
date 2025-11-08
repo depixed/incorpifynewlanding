@@ -23,8 +23,8 @@ const accountingSteps: Step[] = [
       "Easily upload your monthly statements in just a few clicks, no manual entry required.",
     image: {
       type: "jurisdiction",
-      mainImage: "/img/888-1.png",
-      overlayImage: "/img/image-1374.png",
+      mainImage: "/img/bg-variant-1.png",
+      overlayImage: "/img/accounting-step-upload-bank-statement.png",
     },
     isActive: true,
     alignment: "right",
@@ -35,13 +35,9 @@ const accountingSteps: Step[] = [
     description:
       "Our smart AI automatically classifies transactions for accurate bookkeeping.",
     image: {
-      type: "documents",
-      content: {
-        step: "1 of 3 steps",
-        title: "Passport",
-        description:
-          "A government-issued document that serves as a form of identification and proof of citizenship. It is essential for international travel and often required for business incorporation in foreign countries, including the UAE.",
-      },
+      type: "jurisdiction",
+      mainImage: "/img/bg-variant-3.png",
+      overlayImage: "/img/accounting-step-ai-categorisation.png",
     },
     isActive: false,
     alignment: "left",
@@ -52,18 +48,9 @@ const accountingSteps: Step[] = [
     description:
       "Get real-time financial insights and tax-ready reports from a simple dashboard.",
     image: {
-      type: "processing",
-      stars: [
-        {
-          className: "ml-[-5279.9px] w-[17.59px] h-[16.06px] mt-[-2745.1px]",
-          src: "/img/star-1.svg",
-        },
-        {
-          className: "ml-[51.6px] w-[13.03px] h-[13.22px] mt-[2753.1px]",
-          src: "/img/star-4.svg",
-        },
-      ],
-      message: "Just a moment, we working on this for you...",
+      type: "jurisdiction",
+      mainImage: "/img/bg-variant-5.png",
+      overlayImage: "/img/accounting-step-dashboard-insight.png",
     },
     isActive: false,
     alignment: "right",
@@ -74,11 +61,9 @@ const accountingSteps: Step[] = [
     description:
       "Never miss a deadline with automated alerts for your tax and compliance filings.",
     image: {
-      type: "approved",
-      confettiGif:
-        "/img/https-lottiefiles-com-animations-confetti-partyyy-wa6zqqu2jw.gif",
-      congratsTitle: "Congratulations!",
-      congratsMessage: "You've finished onboarding with Incorpify!",
+      type: "jurisdiction",
+      mainImage: "/img/bg-variant-7.png",
+      overlayImage: "/img/accounting-step-filing-reminder.png",
     },
     isActive: false,
     alignment: "left",
@@ -89,9 +74,9 @@ const accountingSteps: Step[] = [
     description:
       "Certified professionals double-check your reports to ensure accuracy and compliance.",
     image: {
-      type: "golive",
-      mainImage: "/img/333-1.png",
-      overlayImage: "/img/image-1374-1.png",
+      type: "jurisdiction",
+      mainImage: "/img/bg-variant-2.png",
+      overlayImage: "/img/accounting-step-expert-review.png",
     },
     isActive: false,
     alignment: "right",
@@ -155,7 +140,7 @@ const accountingFeatures: Feature[] = [
   {
     title: "Bookkeeping Automation",
     description: "Track income and expenses without lifting a finger.",
-    image: "/img/frame-1686557310.png",
+    image: "/img/accounting-feature-bookkeeping-automation.png",
     imageAlt: "Bookkeeping Automation Dashboard",
     containerWidth: "w-full lg:w-[calc(45%-12px)]",
     imageStyles:
@@ -165,7 +150,7 @@ const accountingFeatures: Feature[] = [
   {
     title: "VAT Filing",
     description: "Never miss a filing—automated and on time.",
-    image: "/img/frame-1686557312.png",
+    image: "/img/accounting-feature-vat-filing.png",
     imageAlt: "VAT Filing Interface",
     containerWidth: "w-full lg:w-[calc(55%-12px)]",
     imageStyles:
@@ -175,7 +160,7 @@ const accountingFeatures: Feature[] = [
   {
     title: "Corporate Tax",
     description: "Smart calculations and AI-assisted compliance.",
-    image: "/img/frame-1686557312-1.png",
+    image: "/img/accounting-feature-corporate-tax.png",
     imageAlt: "Corporate Tax Calculator",
     containerWidth: "w-full lg:w-[calc(55%-12px)]",
     imageStyles:
@@ -185,7 +170,7 @@ const accountingFeatures: Feature[] = [
   {
     title: "Bank Integration",
     description: "Securely sync your bank for real-time insights.",
-    image: "/img/frame-2095585970.png",
+    image: "/img/accounting-feature-bank-integration.png",
     imageAlt: "Bank Integration",
     containerWidth: "w-full lg:w-[calc(45%-12px)]",
     imageStyles:
@@ -195,7 +180,7 @@ const accountingFeatures: Feature[] = [
   {
     title: "Financial Insights",
     description: "See what matters—profitability, cash flow, and trends.",
-    image: "/img/frame-1686557312-2.png",
+    image: "/img/accounting-feature-financial-insight.png",
     imageAlt: "Financial Insights Dashboard",
     containerWidth: "w-full lg:w-[calc(45%-12px)]",
     imageStyles:
@@ -206,7 +191,7 @@ const accountingFeatures: Feature[] = [
   {
     title: "Audits",
     description: "Prepare with confidence, backed by data and experts.",
-    image: "/img/audit-compliance-1.png",
+    image: "/img/accounting-feature-audit.png",
     imageAlt: "Audit Compliance",
     containerWidth: "w-full lg:w-[calc(55%-12px)]",
     imageStyles: "relative w-[415.66px] h-[241.74px] object-cover",
@@ -235,10 +220,10 @@ export default function AccountingTaxPage() {
             icon: "/img/chevron-right.svg",
           }}
           heroImage={{
-            src: "/img/accounting-transaction.png",
+            src: "/img/accounting-hero-8x.png",
             alt: "Accounting transaction dashboard showing financial records and statements",
-            width: 604,
-            height: 474,
+            width: 3000,
+            height: 2413,
           }}
           variant="accounting"
         />
@@ -261,27 +246,21 @@ export default function AccountingTaxPage() {
             {
               title: "Alerts for deadlines",
               description: "Get alerts before tax deadlines and compliance issues",
-              image: "/img/frame-2095585971.png",
+              image: "/img/accounting-benefit-1.png",
               imageAlt: "Deadline alerts dashboard",
             },
             {
               title: "Local tax advisors",
               description: "Get expert help when you need it",
-              image: "/img/frame-2095585971-1.png",
+              image: "/img/accounting-benefit-2.png",
               imageAlt: "Tax advisor consultation",
             },
             {
               title: "AI explanations",
               description:
                 "Our AI breaks down financial reports into clear, actionable insights",
-              image: "/img/frame-1686557309.png",
+              image: "/img/accounting-benefit-3.png",
               imageAlt: "AI financial analysis",
-              additionalImage: {
-                src: "/img/14-a-1.png",
-                alt: "AI icon",
-                className:
-                  "absolute top-[calc(50%-24px)] left-[calc(50%+67px)] w-[103px] h-[103px] object-cover",
-              },
             },
           ]}
         />
@@ -323,8 +302,8 @@ export default function AccountingTaxPage() {
             ariaLabel: "Request a demo",
           }}
           image={{
-            src: "/img/progress-tracker-bank-account.png",
-            alt: "Progress tracker showing bank account setup interface with multiple zone options",
+            src: "/img/accounting-cta-image.png",
+            alt: "Accounting and tax services call to action",
           }}
         />
       </main>

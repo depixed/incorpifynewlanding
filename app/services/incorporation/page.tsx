@@ -25,8 +25,8 @@ const incorporationSteps: Step[] = [
       "Tell us about your business and personal needs. Our AI recommends the best location based on costs, timelines, tax advantages, and legal structures. For you.",
     image: {
       type: "jurisdiction",
-      mainImage: "/img/888-1.png",
-      overlayImage: "/img/image-1374.png",
+      mainImage: "/img/our-features/bg Variant=3.png",
+      overlayImage: "/img/incorporation-step-1-select-jurisdiction.png",
     },
     isActive: true,
     alignment: "right",
@@ -37,13 +37,9 @@ const incorporationSteps: Step[] = [
     description:
       "Securely upload your ID, proof of address, and any relevant company documents. We'll guide you through exactly what's needed.",
     image: {
-      type: "documents",
-      content: {
-        step: "1 of 3 steps",
-        title: "Passport",
-        description:
-          "A government-issued document that serves as a form of identification and proof of citizenship. It is essential for international travel and often required for business incorporation in foreign countries, including the UAE.",
-      },
+      type: "jurisdiction",
+      mainImage: "/img/our-features/bg Variant=5.png",
+      overlayImage: "/img/incorporation-step-2-upload-document.png",
     },
     isActive: false,
     alignment: "left",
@@ -77,8 +73,7 @@ const incorporationSteps: Step[] = [
       "Receive real-time updates as your company registration moves through government systems. We'll notify you the moment it's approved.",
     image: {
       type: "approved",
-      confettiGif:
-        "/img/https-lottiefiles-com-animations-confetti-partyyy-wa6zqqu2jw.gif",
+      confettiGif: "/img/incorporation-step-4-approved.gif",
       congratsTitle: "Congratulations!",
       congratsMessage: "You've finished onboarding with Incorpify!",
     },
@@ -92,292 +87,34 @@ const incorporationSteps: Step[] = [
       "With your company officially registered, you can immediately start operating, opening bank accounts, and building your business.",
     image: {
       type: "golive",
-      mainImage: "/img/333-1.png",
-      overlayImage: "/img/image-1374-1.png",
+      mainImage: "/img/our-features/bg Variant=7.png",
+      overlayImage: "/img/incorporation-step-5-go-live.png",
     },
     isActive: false,
     alignment: "right",
   },
 ];
 
-// Benefits with custom content
+// Benefits with images
 const incorporationBenefits = [
   {
     title: "AI-powered execution",
     description: "Incorpify uses AI not just to automate, but to execute.",
-    content: (
-      <div className="relative flex-1 self-stretch w-full grow">
-        <div className="flex w-[336.14px] items-start justify-end gap-[var(--3-spacing-spacing-md)] absolute top-[37px] left-[-17px]">
-          <div className="inline-flex items-start relative flex-[0_0_auto]">
-            <div className="inline-flex flex-col items-end justify-center gap-[12.88px] pt-[var(--3-spacing-spacing-xl)] pr-[var(--3-spacing-spacing-xl)] pb-[var(--3-spacing-spacing-xl)] pl-[var(--3-spacing-spacing-xl)] relative flex-[0_0_auto] rounded-[4.83px_0px_4.83px_4.83px] bg-[linear-gradient(90deg,rgba(29,24,52,1)_0%,rgba(86,71,154,1)_100%)]">
-              <div className="inline-flex items-start gap-[var(--3-spacing-spacing-xl)] relative flex-[0_0_auto]">
-                <div className="inline-flex flex-col items-start justify-center gap-[1.61px] relative flex-[0_0_auto]">
-                  <p className="relative mt-[-0.40px] [font-family:'Inter',Helvetica] font-medium text-[color:var(--1-color-modes-colors-text-text-white)] text-[5.6px] tracking-[0] leading-[8.1px]">
-                    Can you give me a quick summary of our financials for this
-                    quarter?
-                  </p>
-                </div>
-              </div>
-            </div>
-            <img
-              className="relative w-[5.64px] h-[4.83px]"
-              alt="Vector"
-              src="/img/vector.svg"
-            />
-          </div>
-        </div>
-        <div className="flex w-[336px] items-start gap-[var(--3-spacing-spacing-xl-duplicate)] pl-0 pr-[64.41px] py-0 absolute top-[74px] left-[13px]">
-          <div className="relative w-[19.32px] h-[19.32px] bg-1-color-modes-colors-foreground-fg-white rounded-[4093.87px] shadow-[0px_0.81px_1.61px_-0.81px_#1018280f,0px_1.61px_3.22px_-0.81px_#1018281a]">
-            <img
-              className="absolute w-full h-full top-0 left-0 object-cover"
-              alt="Contrast border"
-              src="/img/contrast-border.svg"
-            />
-            <img
-              className="absolute right-px bottom-px w-1.5 h-1.5"
-              alt="Verified tick"
-              src="/img/verified-tick.svg"
-            />
-          </div>
-          <div className="flex flex-col items-end justify-center gap-[var(--3-spacing-spacing-xl)] p-[var(--3-spacing-spacing-xl)] relative flex-1 grow bg-white rounded-[4.83px] border-[0.4px] border-solid border-1-color-modes-colors-border-border-secondary shadow-[0px_1.61px_2.42px_-0.81px_#10182808,0px_4.83px_6.44px_-1.61px_#10182814] mb-2">
-            <div className="flex items-center gap-[4.83px] relative self-stretch w-full flex-[0_0_auto]">
-              <div className="flex flex-col items-start justify-center gap-[1.61px] relative flex-1 grow">
-                <div className="flex items-center gap-[var(--3-spacing-spacing-md)] relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative w-fit mt-[-0.40px] [font-family:'Inter',Helvetica] font-medium text-gray-900 text-[6.4px] tracking-[0] leading-[9.7px] whitespace-nowrap">
-                    AI Advisor
-                  </div>
-                  <div className="relative w-[1.61px] h-[1.61px] bg-1-color-modes-colors-foreground-fg-quaternary-500 rounded-[0.81px]" />
-                  <div className="relative w-fit [font-family:'Inter',Helvetica] font-normal text-gray-500 text-[5.6px] tracking-[0] leading-[8.1px] whitespace-nowrap">
-                    09.10 AM
-                  </div>
-                </div>
-                <div className="flex items-center gap-[var(--3-spacing-spacing-xl)] relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="flex flex-col h-[38px] items-start gap-[5.64px]">
-                    <p className="relative self-stretch [font-family:'Inter',Helvetica] font-medium text-1-color-modes-colors-text-text-primary-900 text-[5.6px] tracking-[0] leading-[8.1px]">
-                      <span className="[font-family:'Inter',Helvetica] font-medium text-[#101828] text-[5.6px] tracking-[0] leading-[8.1px]">
-                        Sure! For Q2 2025 (April – June):
-                      </span>
-                    </p>
-                    <p className="relative self-stretch [font-family:'Inter',Helvetica] font-medium text-1-color-modes-colors-text-text-primary-900 text-[5.6px] tracking-[0] leading-[8.1px]">
-                      <span className="[font-family:'Inter',Helvetica] font-medium text-[#101828] text-[5.6px] tracking-[0] leading-[8.1px]">
-                        Revenue (YTD): AED 1,250,000 (+12% from last year)
-                      </span>
-                    </p>
-                    <p className="relative self-stretch [font-family:'Inter',Helvetica] font-medium text-1-color-modes-colors-text-text-primary-900 text-[5.6px] tracking-[0] leading-[8.1px]">
-                      <span className="[font-family:'Inter',Helvetica] font-medium text-[#101828] text-[5.6px] tracking-[0] leading-[8.1px]">
-                        Expenses (YTD): AED 780,000 (+8% from last year)
-                      </span>
-                    </p>
-                    <p className="relative self-stretch [font-family:'Inter',Helvetica] font-medium text-1-color-modes-colors-text-text-primary-900 text-[5.6px] tracking-[0] leading-[8.1px]">
-                      <span className="[font-family:'Inter',Helvetica] font-medium text-[#101828] text-[5.6px] tracking-[0] leading-[8.1px]">
-                        Pending Entries: 12 journal entries need to be posted.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img
-          className="absolute top-[-4985px] left-[-4090px] w-[60px] h-[60px]"
-          alt="Component"
-          src="/img/component-4.png"
-        />
-        <img
-          className="absolute top-[calc(50.00%_-_32px)] left-[calc(50.00%_+_53px)] w-[107px] h-[107px] object-cover"
-          alt="Element a"
-          src="/img/14-a-1.png"
-        />
-      </div>
-    ),
+    image: "/img/incorporation-benefit-ai-powered.png",
+    imageAlt: "AI-powered execution interface showing intelligent automation",
   },
   {
     title: "Zero Paperwork",
     description: "Launch and manage your company with complete clarity.",
-    content: (
-      <div className="relative flex-1 self-stretch w-full grow">
-        <div className="relative top-[calc(50.00%_-_82px)] left-[calc(50.00%_-_150px)] w-[300px] h-[164px] flex flex-col gap-[16.2px]">
-          <div className="flex -ml-20 h-[43.77px] w-[220px] self-center relative items-center gap-[4.65px] px-[11.63px] py-[9.3px] bg-white rounded-lg overflow-hidden border border-solid border-gray-200 shadow-lg">
-            <img
-              className="relative w-[23.26px] h-[23.26px]"
-              alt="Face id"
-              src="/img/face-id.svg"
-            />
-            <div className="flex flex-col items-start justify-center gap-[1.16px] relative flex-1 grow">
-              <div className="relative w-fit mt-[-0.58px] [font-family:'Inter',Helvetica] font-semibold text-incorpify-primary text-[8.1px] tracking-[0] leading-[11.6px] whitespace-nowrap">
-                Emirates ID
-              </div>
-              <p className="relative w-fit [font-family:'Inter',Helvetica] font-medium text-gray-600 text-[8.1px] tracking-[0] leading-[11.6px] whitespace-nowrap">
-                Biometric: Scheduled – 16 May
-              </p>
-            </div>
-            <div className="relative w-[24px] h-[24px] flex items-center justify-center flex-shrink-0">
-              <img
-                className="absolute w-full h-full"
-                alt="Background"
-                src="/img/background-1.svg"
-              />
-              <img
-                className="absolute w-[21px] h-[21px]"
-                alt="Line"
-                src="/img/line-1.svg"
-              />
-              <div className="relative [font-family:'Inter',Helvetica] font-semibold text-gray-900 text-[5.8px] text-center tracking-[0] leading-[9.3px] whitespace-nowrap z-10">
-                4/5
-              </div>
-            </div>
-          </div>
-          <div className="ml-20 flex w-[220px] h-[43.77px] relative items-center gap-[4.65px] px-[11.63px] py-[9.3px] bg-white rounded-lg overflow-hidden border border-solid border-gray-200 shadow-lg">
-            <img
-              className="relative w-[23.26px] h-[23.26px]"
-              alt="File lock"
-              src="/img/file-lock-02.svg"
-            />
-            <div className="flex flex-col items-start justify-center gap-[1.16px] relative flex-1 grow">
-              <div className="relative w-fit mt-[-0.58px] [font-family:'Inter',Helvetica] font-semibold text-incorpify-primary text-[8.1px] tracking-[0] leading-[11.6px] whitespace-nowrap">
-                Trade license
-              </div>
-              <div className="relative w-fit [font-family:'Inter',Helvetica] font-medium text-gray-600 text-[8.1px] tracking-[0] leading-[11.6px] whitespace-nowrap">
-                Trade name approval
-              </div>
-            </div>
-            <div className="relative w-[24px] h-[24px] flex items-center justify-center flex-shrink-0">
-              <img
-                className="absolute w-full h-full"
-                alt="Background"
-                src="/img/background-1.svg"
-              />
-              <img
-                className="absolute w-[21px] h-[21px]"
-                alt="Line"
-                src="/img/line.svg"
-              />
-              <div className="relative [font-family:'Inter',Helvetica] font-semibold text-gray-900 text-[5.8px] text-center tracking-[0] leading-[9.3px] whitespace-nowrap z-10">
-                2/6
-              </div>
-            </div>
-          </div>
-          <div className="flex w-[220px] h-[43.77px] relative items-center gap-[4.65px] px-[11.63px] py-[9.3px] bg-white rounded-lg overflow-hidden border border-solid border-gray-200 shadow-lg">
-            <img
-              className="relative w-[23.26px] h-[23.26px]"
-              alt="Certificate"
-              src="/img/certificate-02.svg"
-            />
-            <div className="flex flex-col items-start justify-center gap-[1.16px] relative flex-1 grow">
-              <div className="relative w-fit mt-[-0.58px] [font-family:'Inter',Helvetica] font-semibold text-incorpify-primary text-[8.1px] tracking-[0] leading-[11.6px] whitespace-nowrap">
-                Corporate tax
-              </div>
-              <div className="inline-flex items-center gap-[3.49px] relative flex-[0_0_auto]">
-                <div className="relative w-[9.3px] h-[9.3px]">
-                  <div className="absolute w-[80.00%] h-full top-0 left-[17.50%] bg-[url(/img/page-background.svg)] bg-[100%_100%]">
-                    <img
-                      className="absolute w-[35.94%] h-[28.75%] top-0 left-[59.04%]"
-                      alt="Earmark"
-                      src="/img/earmark.svg"
-                    />
-                  </div>
-                  <div className="inline-flex items-start gap-[1.86px] px-[0.7px] py-[0.47px] absolute w-[68.75%] h-[42.25%] top-[43.88%] left-0 bg-primitives-colors-error-600 rounded-[0.47px]">
-                    <div className="relative w-fit mt-[-0.23px] [font-family:'Inter',Helvetica] font-bold text-1-color-modes-colors-foreground-fg-white text-[2.3px] text-center tracking-[0] leading-[normal]">
-                      PDF
-                    </div>
-                  </div>
-                </div>
-                <div className="relative w-fit mt-[-0.58px] [font-family:'Inter',Helvetica] font-medium text-gray-600 text-[8.1px] tracking-[0] leading-[11.6px] whitespace-nowrap">
-                  taxreturn_sept2024.pdf
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
+    image: "/img/incorporation-benefit-zero-paperwork.png",
+    imageAlt: "Zero paperwork digital document management interface",
   },
   {
     title: "All-in-one dashboard",
     description:
       "From setup to banking and taxes, all in one smart dashboard.",
-    content: (
-      <div className="relative flex-1 self-stretch w-full grow">
-        <div className="flex flex-col w-[169px] items-start gap-2 absolute top-[73px] left-[18px] rotate-[-4.00deg]">
-          <div className="flex items-center gap-[5.83px] pr-[var(--3-spacing-spacing-lg)] pl-[var(--3-spacing-spacing-lg)] py-[5.83px] relative self-stretch w-full flex-[0_0_auto] bg-white rounded-[var(--2-radius-radius-md)] overflow-hidden border-[0.73px] border-solid border-gray-200">
-            <div className="flex items-center gap-[var(--3-spacing-spacing-lg)] relative flex-1 grow">
-              <img
-                className="relative w-[15.55px] h-[15.55px] ml-[-0.49px] rotate-[4.00deg]"
-                alt="Stars"
-                src="/img/stars-01.svg"
-              />
-              <div className="relative flex-1 mt-[-0.73px] [font-family:'Inter',Helvetica] font-medium text-gray-700 text-[11.7px] tracking-[0] leading-[17.5px]">
-                Advanced AI
-              </div>
-            </div>
-          </div>
-          <div className="w-[169px] shadow-[0px_4px_6px_-2px_#10182808,0px_12px_16px_-4px_#10182814] flex items-center gap-[5.83px] pr-[var(--3-spacing-spacing-lg)] pl-[var(--3-spacing-spacing-lg)] py-[5.83px] relative flex-[0_0_auto] bg-white rounded-[var(--2-radius-radius-md)] overflow-hidden border-[0.73px] border-solid border-gray-200">
-            <div className="flex w-[151.53px] items-center gap-[var(--3-spacing-spacing-lg)] relative mr-[-0.01px]">
-              <div className="absolute top-1 left-0.5 w-[11px] h-[11px] bg-1-color-modes-component-colors-utility-blue-utility-blue-50" />
-              <img
-                className="relative w-[16.33px] h-[16.33px] ml-[-0.51px] rotate-[4.00deg]"
-                alt="Bar chart square"
-                src="/img/bar-chart-square-02.svg"
-              />
-              <div className="relative flex-1 mt-[-0.73px] [font-family:'Inter',Helvetica] font-medium text-incorpify-primary text-[11.7px] tracking-[0] leading-[17.5px]">
-                Dashboard
-              </div>
-            </div>
-          </div>
-          <div className="self-stretch w-full flex items-center gap-[5.83px] pr-[var(--3-spacing-spacing-lg)] pl-[var(--3-spacing-spacing-lg)] py-[5.83px] relative flex-[0_0_auto] bg-white rounded-[var(--2-radius-radius-md)] overflow-hidden border-[0.73px] border-solid border-gray-200">
-            <div className="flex items-center gap-[var(--3-spacing-spacing-lg)] relative flex-1 grow">
-              <img
-                className="relative w-[15.55px] h-[15.55px] ml-[-0.49px] rotate-[4.00deg]"
-                alt="File"
-                src="/img/file-06.svg"
-              />
-              <div className="relative flex-1 mt-[-0.73px] [font-family:'Inter',Helvetica] font-medium text-gray-700 text-[11.7px] tracking-[0] leading-[17.5px]">
-                Financial Reports
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col w-[169px] items-start gap-2 absolute top-3 left-40 rotate-[-4.00deg]">
-          <div className="self-stretch w-full flex items-center gap-[5.83px] pr-[var(--3-spacing-spacing-lg)] pl-[var(--3-spacing-spacing-lg)] py-[5.83px] relative flex-[0_0_auto] bg-white rounded-[var(--2-radius-radius-md)] overflow-hidden border-[0.73px] border-solid border-gray-200">
-            <div className="flex items-center gap-[var(--3-spacing-spacing-lg)] relative flex-1 grow">
-              <img
-                className="relative w-[15.55px] h-[15.55px] ml-[-0.49px] rotate-[4.00deg]"
-                alt="Calculator"
-                src="/img/calculator.svg"
-              />
-              <div className="relative flex-1 mt-[-0.73px] [font-family:'Inter',Helvetica] font-medium text-gray-700 text-[11.7px] tracking-[0] leading-[17.5px]">
-                Accounting
-              </div>
-            </div>
-          </div>
-          <div className="self-stretch w-full flex items-center gap-[5.83px] pr-[var(--3-spacing-spacing-lg)] pl-[var(--3-spacing-spacing-lg)] py-[5.83px] relative flex-[0_0_auto] bg-white rounded-[var(--2-radius-radius-md)] overflow-hidden border-[0.73px] border-solid border-gray-200">
-            <div className="flex items-center gap-[var(--3-spacing-spacing-lg)] relative flex-1 grow">
-              <img
-                className="relative w-[15.55px] h-[15.55px] ml-[-0.49px] rotate-[4.00deg]"
-                alt="Certificate"
-                src="/img/certificate-02-1.svg"
-              />
-              <div className="relative flex-1 mt-[-0.73px] [font-family:'Inter',Helvetica] font-medium text-gray-700 text-[11.7px] tracking-[0] leading-[17.5px]">
-                Taxes
-              </div>
-            </div>
-          </div>
-          <div className="self-stretch w-full flex items-center gap-[5.83px] pr-[var(--3-spacing-spacing-lg)] pl-[var(--3-spacing-spacing-lg)] py-[5.83px] relative flex-[0_0_auto] bg-white rounded-[var(--2-radius-radius-md)] overflow-hidden border-[0.73px] border-solid border-gray-200">
-            <div className="flex items-center gap-[var(--3-spacing-spacing-lg)] relative flex-1 grow">
-              <img
-                className="relative w-[15.55px] h-[15.55px] ml-[-0.49px] rotate-[4.00deg]"
-                alt="Bank note"
-                src="/img/bank-note-02.svg"
-              />
-              <div className="relative flex-1 mt-[-0.73px] [font-family:'Inter',Helvetica] font-medium text-gray-700 text-[11.7px] tracking-[0] leading-[17.5px]">
-                Banking
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
+    image: "/img/incorporation-benefit-all-in-one.png",
+    imageAlt: "All-in-one dashboard showing integrated business management",
   },
 ];
 
@@ -448,10 +185,10 @@ export default function IncorporationPage() {
             ariaLabel: "Get started with company formation",
           }}
           heroImage={{
-            src: "/img/tv-316.png",
-            alt: "Company formation platform interface showing free zone options including IFZA, Meydan City, and Dubai Multi Commodities Centre",
-            width: 983,
-            height: 645,
+            src: "/img/incorporation-hero.png",
+            alt: "Company formation platform interface showing incorporation services powered by AI",
+            width: 3499,
+            height: 2486,
           }}
           variant="incorporation"
         />
@@ -504,8 +241,8 @@ export default function IncorporationPage() {
             ariaLabel: "Request a demo",
           }}
           image={{
-            src: "/img/progress-tracker-bank-account.png",
-            alt: "Progress tracker showing bank account setup interface with multiple zone options",
+            src: "/img/incorporation-cta-image.png",
+            alt: "Company incorporation CTA showing business setup interface",
           }}
         />
       </main>

@@ -129,7 +129,7 @@ export const ServiceHero = ({
             {/* Dashboard Image Container */}
             <figure className="relative w-full max-w-[500px] md:max-w-[600px] lg:max-w-none lg:absolute lg:top-[calc(50%_-_220px)] lg:left-0">
               <div className="inline-flex flex-col items-start p-3 md:p-[12.84px] w-full bg-[#473f7066] rounded-2xl lg:rounded-[30px] overflow-hidden border border-solid lg:border-[1.84px] border-incorpifyprimary shadow-[0px_20px_40px_-10px_#10182824] lg:shadow-[0px_34.23px_68.46px_-12.84px_#10182824]">
-                <div className="relative w-full aspect-[603.57/474.33]">
+                <div className="relative w-full aspect-[3000/2413]">
                   <Image
                     className="relative w-full h-full object-cover rounded-lg"
                     alt={heroImage.alt}
@@ -190,15 +190,18 @@ export const ServiceHero = ({
       </div>
 
       {/* Hero Image */}
-      <figure className="inline-flex flex-col items-start pt-4 md:pt-5 lg:pt-[var(--3-spacing-spacing-xl)] pr-4 md:pr-5 lg:pr-[var(--3-spacing-spacing-xl)] pb-4 md:pb-5 lg:pb-[var(--3-spacing-spacing-xl)] pl-4 md:pl-5 lg:pl-[var(--3-spacing-spacing-xl)] relative bg-[#473f7066] rounded-2xl md:rounded-3xl lg:rounded-[32px] overflow-hidden border border-solid border-incorpifyprimary shadow-[0px_46.56px_93.11px_-17.46px_#10182824] max-w-full">
-        <Image
-          className="relative w-full max-w-[982.98px] h-auto object-cover"
-          alt={heroImage.alt}
-          src={heroImage.src}
-          width={heroImage.width}
-          height={heroImage.height}
-          priority
-        />
+      <figure className="inline-flex flex-col items-start pt-4 md:pt-5 lg:pt-[var(--3-spacing-spacing-xl)] pr-4 md:pr-5 lg:pr-[var(--3-spacing-spacing-xl)] pb-4 md:pb-5 lg:pb-[var(--3-spacing-spacing-xl)] pl-4 md:pl-5 lg:pl-[var(--3-spacing-spacing-xl)] relative bg-[#473f7066] rounded-2xl md:rounded-3xl lg:rounded-[32px] overflow-hidden border border-solid border-incorpifyprimary shadow-[0px_46.56px_93.11px_-17.46px_#10182824] max-w-full w-full">
+        <div className="relative w-full h-auto">
+          <Image
+            className="relative w-full h-auto object-contain rounded-lg"
+            alt={heroImage.alt}
+            src={heroImage.src}
+            width={heroImage.width}
+            height={heroImage.height}
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+          />
+        </div>
       </figure>
     </section>
   );

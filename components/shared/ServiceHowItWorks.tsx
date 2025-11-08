@@ -145,6 +145,34 @@ export const ServiceHowItWorks = ({
               <div className="flex flex-col items-start lg:items-end gap-6 md:gap-8 lg:gap-[var(--3-spacing-spacing-3xl)] pt-2 md:pt-[var(--3-spacing-spacing-md)] pb-8 md:pb-[var(--3-spacing-spacing-4xl)] px-0 relative w-full lg:w-[500px] order-2 lg:order-1">
                 {/* Visual card */}
                 <div className="relative w-full h-56 md:h-64 lg:h-72 rounded-2xl md:rounded-3xl overflow-hidden shadow-[inset_0px_0px_0.33px_0.33px_#ffffff,0px_20px_20px_-4px_#00000003,0px_6.38px_6.38px_-3px_#00000008,0px_2.41px_2.41px_-2px_#0000000a,0px_0.8px_0.8px_-1px_#0000000a] bg-[linear-gradient(180deg,rgba(246,241,252,0.5)_0%,rgba(255,255,255,0.5)_100%)] flex items-center justify-center p-4 md:p-6">
+                  {/* Jurisdiction and GoLive view for left-aligned steps */}
+                  {(step.image.type === "jurisdiction" || step.image.type === "golive") &&
+                    step.image.mainImage &&
+                    step.image.overlayImage && (
+                      <>
+                        <div className="absolute inset-0 w-full h-full">
+                          <Image
+                            className="w-full h-full object-cover opacity-60"
+                            alt=""
+                            src={step.image.mainImage}
+                            width={500}
+                            height={288}
+                            style={{ objectPosition: "center" }}
+                          />
+                        </div>
+
+                        <div className="relative inline-flex flex-col items-start p-0.5 md:p-1 bg-[#1d18340f] rounded-lg overflow-hidden border-[0.17px] border-solid border-white shadow-[0px_10px_20px_-4px_#10182824] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)]">
+                          <Image
+                            className="relative w-[312px] md:w-[364px] h-[203px] md:h-[237px] object-contain rounded"
+                            alt=""
+                            src={step.image.overlayImage}
+                            width={364}
+                            height={237}
+                          />
+                        </div>
+                      </>
+                    )}
+
                   {/* Documents view */}
                   {step.image.type === "documents" && step.image.content && (
                     <div className="flex flex-col w-full max-w-[320px] items-start gap-3 md:gap-4 p-4 md:p-5 bg-white rounded-xl shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_10px_10px_-5px_rgba(0,0,0,0.04)] border-[0.5px] border-solid border-gray-200">
@@ -283,7 +311,7 @@ export const ServiceHowItWorks = ({
 
                         <div className="relative inline-flex flex-col items-start p-0.5 md:p-1 bg-[#1d18340f] rounded-lg overflow-hidden border-[0.17px] border-solid border-white shadow-[0px_10px_20px_-4px_#10182824] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)]">
                           <Image
-                            className="relative w-[312px] md:w-[364px] h-[203px] md:h-[237px] object-cover rounded"
+                            className="relative w-[312px] md:w-[364px] h-[203px] md:h-[237px] object-contain rounded"
                             alt=""
                             src={step.image.overlayImage}
                             width={364}
