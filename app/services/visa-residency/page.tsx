@@ -1,7 +1,8 @@
 import { Header } from "@/components/Header";
 import { ServiceHero } from "@/components/shared/ServiceHero";
+import { VisaSolutions } from "@/components/services/visa-residency/VisaSolutions";
 import { ServiceHowItWorks, Step } from "@/components/shared/ServiceHowItWorks";
-import { ServiceBenefits } from "@/components/shared/ServiceBenefits";
+import { VisaBenefits } from "@/components/services/visa-residency/VisaBenefits";
 import { ServiceFAQ, FAQItem } from "@/components/shared/ServiceFAQ";
 import { ServiceReadyToLaunch } from "@/components/shared/ServiceReadyToLaunch";
 import { Footer } from "@/components/Footer";
@@ -17,83 +18,55 @@ export const metadata: Metadata = {
 const visaSteps: Step[] = [
   {
     number: "01",
-    title: "Choose your visa type",
+    title: "Application Submission",
     description:
-      "Select from various visa options including residence, investor, golden visa, and more. Our AI helps recommend the best option for your needs.",
+      "Submit your visa application online with guided support and zero paperwork hassle.",
     image: {
       type: "jurisdiction",
-      mainImage: "/img/888-1.png",
-      overlayImage: "/img/image-1374.png",
+      mainImage: "/img/visa-bg-variant-1.png",
+      overlayImage: "/img/visa-residency-how-it-works/application submission.png",
     },
     isActive: true,
     alignment: "right",
   },
   {
     number: "02",
-    title: "Submit documents",
+    title: "Medical & ID Processing",
     description:
-      "Upload your passport, photos, and required supporting documents. We guide you through exactly what's needed for your specific visa type.",
+      "We coordinate your medical checks and ID verifications to meet all legal requirements.",
     image: {
-      type: "documents",
-      content: {
-        step: "1 of 3 steps",
-        title: "Passport",
-        description:
-          "A government-issued document that serves as a form of identification and proof of citizenship. It is essential for international travel and often required for business incorporation in foreign countries, including the UAE.",
-      },
+      type: "jurisdiction",
+      mainImage: "/img/bg-variant-2.png",
+      overlayImage: "/img/visa-residency-how-it-works/Medical and id proccessing.png",
     },
     isActive: false,
     alignment: "left",
   },
   {
     number: "03",
-    title: "Application processing",
+    title: "Approval & Visa Issuance",
     description:
-      "Our team handles your visa application, medical screenings, and biometric appointments. Track everything in real-time through your dashboard.",
+      "Receive timely updates on approval status and get your visa issued without delays.",
     image: {
-      type: "processing",
-      stars: [
-        {
-          className: "ml-[-5279.9px] w-[17.59px] h-[16.06px] mt-[-2745.1px]",
-          src: "/img/star-1.svg",
-        },
-        {
-          className: "ml-[51.6px] w-[13.03px] h-[13.22px] mt-[2753.1px]",
-          src: "/img/star-4.svg",
-        },
-      ],
-      message: "Just a moment, we working on this for you...",
+      type: "jurisdiction",
+      mainImage: "/img/bg-variant-6.png",
+      overlayImage: "/img/visa-residency-how-it-works/Aproval and visa issuance.png",
     },
     isActive: false,
     alignment: "right",
   },
   {
     number: "04",
-    title: "Visa approval",
+    title: "Renewal Notifications",
     description:
-      "Receive instant notification when your visa is approved. We'll coordinate all final steps including Emirates ID application.",
+      "Stay compliant with proactive reminders before your visa or residency expires.",
     image: {
-      type: "approved",
-      confettiGif:
-        "/img/https-lottiefiles-com-animations-confetti-partyyy-wa6zqqu2jw.gif",
-      congratsTitle: "Congratulations!",
-      congratsMessage: "Your visa has been approved!",
+      type: "jurisdiction",
+      mainImage: "/img/visa-bg-variant-4.png",
+      overlayImage: "/img/visa-residency-how-it-works/Renewal notification.png",
     },
     isActive: false,
     alignment: "left",
-  },
-  {
-    number: "05",
-    title: "Welcome to your new home",
-    description:
-      "Start your new chapter with full residency. We continue to support you with renewals and any additional documentation needed.",
-    image: {
-      type: "golive",
-      mainImage: "/img/333-1.png",
-      overlayImage: "/img/image-1374-1.png",
-    },
-    isActive: false,
-    alignment: "right",
   },
 ];
 
@@ -169,47 +142,14 @@ export default function VisaResidencyPage() {
             icon: "/img/chevron-right.svg",
           }}
           heroImage={{
-            src: "/img/accounting-transaction.png",
+            src: "/img/visa-residency-hero-8x.png",
             alt: "Visa application dashboard showing document tracking and approval status",
-            width: 604,
-            height: 474,
+            width: 3000,
+            height: 2413,
           }}
           variant="accounting"
         />
-        <ServiceBenefits
-          badge={{
-            icon: "/img/stars-02.svg",
-            text: "Benefits",
-          }}
-          heading="Why Choose Incorpify for Your Visa?"
-          benefits={[
-            {
-              title: "Expert guidance",
-              description: "Local visa specialists guide you through every step",
-              image: "/img/frame-2095585971-1.png",
-              imageAlt: "Visa expert consultation",
-            },
-            {
-              title: "Fast processing",
-              description: "Expedited applications with priority handling",
-              image: "/img/frame-2095585971.png",
-              imageAlt: "Fast visa processing dashboard",
-            },
-            {
-              title: "Real-time tracking",
-              description:
-                "Monitor your application status 24/7 from your dashboard",
-              image: "/img/frame-1686557309.png",
-              imageAlt: "Application tracking interface",
-              additionalImage: {
-                src: "/img/14-a-1.png",
-                alt: "Tracking icon",
-                className:
-                  "absolute top-[calc(50%-24px)] left-[calc(50%+67px)] w-[103px] h-[103px] object-cover",
-              },
-            },
-          ]}
-        />
+        <VisaSolutions />
         <ServiceHowItWorks
           badge={{
             icon: "/img/dataflow-03.svg",
@@ -218,6 +158,7 @@ export default function VisaResidencyPage() {
           heading="Your Path to Residency Made Simple"
           steps={visaSteps}
         />
+        <VisaBenefits />
         <ServiceFAQ
           badge={{
             icon: "/img/message-question-square.svg",
@@ -248,8 +189,8 @@ export default function VisaResidencyPage() {
             ariaLabel: "Request a demo",
           }}
           image={{
-            src: "/img/progress-tracker-bank-account.png",
-            alt: "Visa application progress tracker showing document submission status",
+            src: "/img/visa-residency-cta-image.png",
+            alt: "Visa and residency services call to action",
           }}
         />
       </main>
