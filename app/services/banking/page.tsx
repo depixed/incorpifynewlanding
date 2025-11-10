@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { ServiceHero } from "@/components/shared/ServiceHero";
-import { ServiceOurFeatures, Feature } from "@/components/shared/ServiceOurFeatures";
+import { BankPartners } from "@/components/shared/BankPartners";
 import { ServiceHowItWorks, Step } from "@/components/shared/ServiceHowItWorks";
 import { ServiceBenefits } from "@/components/shared/ServiceBenefits";
 import { ServiceFAQ, FAQItem } from "@/components/shared/ServiceFAQ";
@@ -18,111 +18,77 @@ export const metadata: Metadata = {
 const bankingSteps: Step[] = [
   {
     number: "01",
-    title: "Choose your bank",
+    title: "Add Banking Option",
     description:
-      "Browse our partner banks and compare features, fees, and benefits. Our AI recommends the best banking options based on your business needs.",
+      "Choose to link an existing bank account or open a brand-new business bank account.",
     image: {
       type: "jurisdiction",
-      mainImage: "/img/888-1.png",
-      overlayImage: "/img/image-1374.png",
+      mainImage: "/img/bg-variant-2.png",
+      overlayImage: "/img/banking-step-1-add-banking-option.png",
     },
     isActive: true,
     alignment: "right",
   },
   {
     number: "02",
-    title: "Submit your documents",
+    title: "Select Application Type",
     description:
-      "Upload your trade license, Emirates ID, passport, and business documents. We ensure everything is complete before submission.",
+      "Pick between Standard processing or Fast Track for approval within 24 hours.",
     image: {
-      type: "documents",
-      content: {
-        step: "1 of 3 steps",
-        title: "Passport",
-        description:
-          "A government-issued document that serves as a form of identification and proof of citizenship. It is essential for international travel and often required for business incorporation in foreign countries, including the UAE.",
-      },
+      type: "jurisdiction",
+      mainImage: "/img/bg-variant-5.png",
+      overlayImage: "/img/banking-step-2-select-application-type.png",
     },
     isActive: false,
     alignment: "left",
   },
   {
     number: "03",
-    title: "Bank review & verification",
+    title: "Track in Real-Time",
     description:
-      "Our team coordinates with the bank for KYC verification and compliance checks. We handle all communication on your behalf.",
+      "Monitor your application status instantly with live updates on your dashboard.",
     image: {
-      type: "processing",
-      stars: [
-        {
-          className: "ml-[-5279.9px] w-[17.59px] h-[16.06px] mt-[-2745.1px]",
-          src: "/img/star-1.svg",
-        },
-        {
-          className: "ml-[51.6px] w-[13.03px] h-[13.22px] mt-[2753.1px]",
-          src: "/img/star-4.svg",
-        },
-      ],
-      message: "Just a moment, we working on this for you...",
+      type: "jurisdiction",
+      mainImage: "/img/bg-variant-7.png",
+      overlayImage: "/img/banking-step-3-track-real-time.png",
     },
     isActive: false,
     alignment: "right",
   },
   {
     number: "04",
-    title: "Account approved",
+    title: "Account Ready",
     description:
-      "Receive your account details, debit cards, and online banking credentials. Your corporate account is ready to use.",
+      "Once approved, start managing your business banking with ease and confidence.",
     image: {
-      type: "approved",
-      confettiGif:
-        "/img/https-lottiefiles-com-animations-confetti-partyyy-wa6zqqu2jw.gif",
-      congratsTitle: "Congratulations!",
-      congratsMessage: "Your corporate account is now active!",
+      type: "jurisdiction",
+      mainImage: "/img/bg-variant-3.png",
+      overlayImage: "/img/banking-step-4-account-ready.png",
     },
     isActive: false,
     alignment: "left",
-  },
-  {
-    number: "05",
-    title: "Start banking",
-    description:
-      "Begin making payments, receiving funds, and managing your finances. Access 24/7 online banking and dedicated support.",
-    image: {
-      type: "golive",
-      mainImage: "/img/333-1.png",
-      overlayImage: "/img/image-1374-1.png",
-    },
-    isActive: false,
-    alignment: "right",
   },
 ];
 
 // Benefits
 const bankingBenefits = [
   {
-    title: "Multi-currency accounts",
-    description: "Hold and transfer funds in multiple currencies with competitive exchange rates",
-    image: "/img/frame-2095585971.png",
-    imageAlt: "Multi-currency banking dashboard",
+    title: "Trusted Bank Partners",
+    description: "Get access to trusted local and international banks.",
+    image: "/img/banking-benefit-1.png",
+    imageAlt: "Trusted bank partners",
   },
   {
-    title: "Fast account opening",
-    description: "Get your corporate account opened in 5-7 days with our streamlined process",
-    image: "/img/frame-2095585971-1.png",
-    imageAlt: "Fast account opening process",
+    title: "Lower Rejection Risk",
+    description: "Pre-checked documents mean smoother approvals.",
+    image: "/img/banking-benefit-2.png",
+    imageAlt: "Lower rejection risk with pre-checked documents",
   },
   {
-    title: "Dedicated support",
-    description: "Access relationship managers and banking specialists whenever you need assistance",
-    image: "/img/frame-1686557309.png",
-    imageAlt: "Banking support team",
-    additionalImage: {
-      src: "/img/14-a-1.png",
-      alt: "Support icon",
-      className:
-        "absolute top-[calc(50%-24px)] left-[calc(50%+67px)] w-[103px] h-[103px] object-cover",
-    },
+    title: "Fully Digital Compliance",
+    description: "Apply, track, and manage everything online.",
+    image: "/img/banking-benefit-3.png",
+    imageAlt: "Fully digital compliance and management",
   },
 ];
 
@@ -178,93 +144,56 @@ const bankingFaqs: FAQItem[] = [
   },
 ];
 
-// Features for Our Features section (4-card layout example)
-const bankingFeatures: Feature[] = [
-  {
-    title: "Multi-Currency Accounts",
-    description: "Hold and transact in AED, USD, EUR, GBP, and more currencies seamlessly.",
-    image: "/img/frame-1686557310.png",
-    imageAlt: "Multi-currency account interface",
-    containerWidth: "w-full lg:w-[calc(50%-12px)]",
-    imageStyles:
-      "absolute top-[calc(50%_-_120px)] left-[calc(50%_-_182px)] w-[364px] h-[242px]",
-    mobileImageStyles: "w-full h-auto object-contain",
-  },
-  {
-    title: "Payment Gateway Integration",
-    description: "Accept payments online with secure, compliant payment processing.",
-    image: "/img/frame-1686557312.png",
-    imageAlt: "Payment gateway dashboard",
-    containerWidth: "w-full lg:w-[calc(50%-12px)]",
-    imageStyles:
-      "absolute top-[calc(50%_-_94px)] left-[calc(50%_-_239px)] w-[478px] h-[228px]",
-    mobileImageStyles: "w-full h-auto object-contain",
-  },
-  {
-    title: "International Wire Transfers",
-    description: "Send and receive money globally with competitive FX rates.",
-    image: "/img/frame-1686557312-1.png",
-    imageAlt: "Wire transfer interface",
-    containerWidth: "w-full lg:w-[calc(50%-12px)]",
-    imageStyles:
-      "absolute top-[calc(50%_-_93px)] left-[calc(50%_-_241px)] w-[483px] h-[223px]",
-    mobileImageStyles: "w-full h-auto object-contain",
-  },
-  {
-    title: "Real-time Account Monitoring",
-    description: "Track all transactions, balances, and activities from your dashboard.",
-    image: "/img/frame-2095585970.png",
-    imageAlt: "Account monitoring dashboard",
-    containerWidth: "w-full lg:w-[calc(50%-12px)]",
-    imageStyles:
-      "absolute top-[calc(50%_-_101px)] left-[calc(50%_-_210px)] w-[420px] h-[248px]",
-    mobileImageStyles: "w-full h-auto object-contain",
-  },
-];
-
 export default function BankingPage() {
   return (
     <div className="min-h-screen w-full bg-[#1d1834]">
       <Header />
       <main className="w-full">
         <ServiceHero
-          title="Corporate Banking Made Simple"
-          description="Open business accounts with leading UAE and regional banks. Multi-currency solutions, payment processing, and dedicated support."
+          title="Open Business Bank Accounts Faster"
+          description="Connect with banks, track progress, and launch fast."
           primaryCta={{
-            text: "Get Started",
+            text: "Open a Business Bank Account",
             href: "#get-started",
-            ariaLabel: "Get started with corporate banking",
+            ariaLabel: "Open a business bank account",
           }}
           secondaryCta={{
-            text: "Talk to Banking Expert",
-            href: "#talk-to-expert",
-            ariaLabel: "Talk to a banking expert",
+            text: "Explore Banking Options",
+            href: "#explore-options",
+            ariaLabel: "Explore banking options",
             icon: "/img/chevron-right.svg",
           }}
           heroImage={{
-            src: "/img/accounting-transaction.png",
+            src: "/img/banking-hero-8x.png",
             alt: "Corporate banking dashboard showing account overview and transaction management",
-            width: 604,
-            height: 474,
+            width: 1200,
+            height: 800,
           }}
-          variant="accounting"
+          variant="banking"
         />
-        <ServiceOurFeatures
+        <BankPartners
           badge={{
-            icon: "/img/grid-01.svg",
-            text: "Our Features",
+            icon: "/img/building-07.svg",
+            text: "Bank Partners",
           }}
-          heading="Banking Features Designed for Your Business"
-          features={bankingFeatures}
-          layout="4-cards"
-        />
-        <ServiceBenefits
-          badge={{
-            icon: "/img/stars-02.svg",
-            text: "Benefits",
-          }}
-          heading="Why Choose Incorpify for Banking?"
-          benefits={bankingBenefits}
+          heading="Find the Right Bank for Your Business Needs"
+          partners={[
+            {
+              name: "Emirates NBD",
+              logo: "/img/bank-emirates-nbd.png",
+              alt: "Emirates NBD bank logo",
+            },
+            {
+              name: "Mashreq",
+              logo: "/img/bank-mashreq.png",
+              alt: "Mashreq bank logo",
+            },
+            {
+              name: "Wio",
+              logo: "/img/bank-wio.png",
+              alt: "Wio bank logo",
+            },
+          ]}
         />
         <ServiceHowItWorks
           badge={{
@@ -273,6 +202,14 @@ export default function BankingPage() {
           }}
           heading="Your Path to Corporate Banking"
           steps={bankingSteps}
+        />
+        <ServiceBenefits
+          badge={{
+            icon: "/img/stars-02.svg",
+            text: "Benefits",
+          }}
+          heading="Why Choose Incorpify for Banking?"
+          benefits={bankingBenefits}
         />
         <ServiceFAQ
           badge={{
@@ -304,8 +241,8 @@ export default function BankingPage() {
             ariaLabel: "Request a demo",
           }}
           image={{
-            src: "/img/progress-tracker-bank-account.png",
-            alt: "Banking application progress tracker showing document verification status",
+            src: "/img/banking-cta-image.png",
+            alt: "Banking CTA image showing business banking services",
           }}
         />
       </main>

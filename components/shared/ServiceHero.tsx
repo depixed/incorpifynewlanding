@@ -30,7 +30,7 @@ interface ServiceHeroProps {
   primaryCta: PrimaryCTA;
   secondaryCta?: SecondaryCTA;
   heroImage: HeroImage;
-  variant?: "accounting" | "incorporation";
+  variant?: "accounting" | "incorporation" | "banking";
 }
 
 export const ServiceHero = ({
@@ -43,6 +43,121 @@ export const ServiceHero = ({
 }: ServiceHeroProps): JSX.Element => {
   // Different layouts based on variant
   const isAccountingStyle = variant === "accounting";
+  const isBankingStyle = variant === "banking";
+
+  if (isBankingStyle) {
+    return (
+      <section
+        className="flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-12 pt-20 md:pt-28 lg:pt-32 pb-12 md:pb-16 lg:pb-20 relative bg-incorpifyprimary overflow-hidden"
+        aria-label="Hero section"
+      >
+        {/* Background video at bottom */}
+        <video
+          className="hidden lg:block absolute left-[calc(50.00%_-_975px)] bottom-px w-[1950px] h-[1300px] opacity-5 object-cover pointer-events-none"
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-hidden="true"
+        >
+          <source src="/img/hero/white dot bg video bottom.mp4" type="video/mp4" />
+        </video>
+
+        {/* Background wavy pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          aria-hidden="true"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,100 Q50,50 100,100 T200,100' stroke='white' fill='none' stroke-width='1.5'/%3E%3Cpath d='M0,120 Q50,70 100,120 T200,120' stroke='white' fill='none' stroke-width='1.5'/%3E%3Cpath d='M0,80 Q50,30 100,80 T200,80' stroke='white' fill='none' stroke-width='1.5'/%3E%3C/svg%3E")`,
+            backgroundSize: '400px 400px',
+            backgroundRepeat: 'repeat',
+            backgroundPosition: 'center',
+          }}
+        />
+
+        <div className="flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-12 px-4 md:px-8 lg:px-[var(--3-spacing-spacing-8xl)] py-0 relative w-full max-w-[1360px]">
+          {/* Centered Content Section */}
+          <div className="flex flex-col items-center gap-6 md:gap-8 lg:gap-10 relative w-full">
+            {/* Header Content - Centered */}
+            <header className="flex flex-col items-center justify-center gap-3 md:gap-4 lg:gap-4 relative w-full">
+              <h1 className="relative w-full max-w-[800px] mt-[-1.00px] font-display-lg-semibold font-[number:var(--display-lg-semibold-font-weight)] text-1-color-modes-colors-text-text-primary-on-brand text-[28px] sm:text-[36px] md:text-[40px] lg:text-[length:var(--display-lg-semibold-font-size)] tracking-[var(--display-lg-semibold-letter-spacing)] leading-[36px] sm:leading-[44px] md:leading-[52px] lg:leading-[var(--display-lg-semibold-line-height)] [font-style:var(--display-lg-semibold-font-style)] text-center">
+                {title}
+              </h1>
+
+              <p className="relative w-full max-w-[600px] font-text-xl-medium font-[number:var(--text-xl-medium-font-weight)] text-1-color-modes-component-colors-utility-gray-utility-gray-300 text-base md:text-lg lg:text-[length:var(--text-xl-medium-font-size)] tracking-[var(--text-xl-medium-letter-spacing)] leading-[24px] md:leading-[28px] lg:leading-[var(--text-xl-medium-line-height)] [font-style:var(--text-xl-medium-font-style)] text-center">
+                {description}
+              </p>
+            </header>
+
+            {/* CTA Buttons - Horizontal Layout */}
+            <nav
+              className="inline-flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 relative w-full sm:w-auto"
+              aria-label="Primary call to action"
+            >
+              <Link href={primaryCta.href} className="w-full sm:w-auto">
+                <button
+                  className="all-[unset] box-border w-full sm:w-auto inline-flex items-center justify-center gap-[var(--3-spacing-spacing-sm)] px-4 md:px-[var(--3-spacing-spacing-xl)] py-2.5 md:py-2.5 relative bg-1-color-modes-colors-foreground-fg-white rounded-[12px] overflow-hidden border-[none] shadow-shadows-shadow-xs-skeuomorphic before:content-[''] before:absolute before:inset-0 before:p-0.5 before:rounded-[12px] before:[background:linear-gradient(180deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none hover:bg-white/95 transition-colors cursor-pointer"
+                  type="button"
+                  aria-label={primaryCta.ariaLabel}
+                >
+                  <span className="inline-flex items-center justify-center pr-[var(--3-spacing-spacing-xxs)] pl-[var(--3-spacing-spacing-xxs)] py-0 relative">
+                    <span className="relative w-fit mt-[-1.00px] font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-incorpifyprimary text-[length:var(--text-md-semibold-font-size)] tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] whitespace-nowrap [font-style:var(--text-md-semibold-font-style)]">
+                      {primaryCta.text}
+                    </span>
+                  </span>
+                </button>
+              </Link>
+
+              {secondaryCta && (
+                <Link href={secondaryCta.href} className="w-full sm:w-auto">
+                  <button
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-[var(--3-spacing-spacing-sm)] px-4 md:px-[var(--3-spacing-spacing-xl)] py-2.5 md:py-2.5 relative rounded-[12px] overflow-hidden hover:bg-white/10 transition-colors cursor-pointer bg-transparent border border-solid border-white/20"
+                    type="button"
+                    aria-label={secondaryCta.ariaLabel}
+                  >
+                    <span className="inline-flex items-center justify-center pr-[var(--3-spacing-spacing-xxs)] pl-[var(--3-spacing-spacing-xxs)] py-0 relative">
+                      <span className="relative w-fit mt-[-1.00px] font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-1-color-modes-colors-text-text-primary-on-brand text-[length:var(--text-md-semibold-font-size)] tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] whitespace-nowrap [font-style:var(--text-md-semibold-font-style)]">
+                        {secondaryCta.text}
+                      </span>
+                    </span>
+
+                    {secondaryCta.icon && (
+                      <img
+                        className="relative w-5 h-5"
+                        alt=""
+                        src={secondaryCta.icon}
+                        aria-hidden="true"
+                      />
+                    )}
+                  </button>
+                </Link>
+              )}
+            </nav>
+          </div>
+
+          {/* Hero Image - Below Content */}
+          <figure className="relative w-full max-w-[1200px] mt-8 md:mt-10 lg:mt-12 z-10">
+            <div className="inline-flex flex-col items-start p-3 md:p-[12.84px] w-full bg-[#473f7066] rounded-2xl lg:rounded-[30px] overflow-hidden border border-solid lg:border-[1.84px] border-incorpifyprimary shadow-[0px_20px_40px_-10px_#10182824] lg:shadow-[0px_34.23px_68.46px_-12.84px_#10182824]">
+              <div className="relative w-full">
+                <picture>
+                  <source
+                    media="(max-width: 768px)"
+                    srcSet="/img/banking-hero-5x.png"
+                  />
+                  <img
+                    className="relative w-full h-auto object-contain rounded-lg"
+                    alt={heroImage.alt}
+                    src={heroImage.src}
+                    loading="eager"
+                  />
+                </picture>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </section>
+    );
+  }
 
   if (isAccountingStyle) {
     return (
