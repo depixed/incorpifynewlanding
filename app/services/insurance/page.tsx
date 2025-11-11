@@ -1,6 +1,8 @@
 import { Header } from "@/components/Header";
 import { ServiceHero } from "@/components/shared/ServiceHero";
+import { CoverageOptions } from "@/components/shared/CoverageOptions";
 import { ServiceHowItWorks, Step } from "@/components/shared/ServiceHowItWorks";
+import { BackedBy } from "@/components/shared/BackedBy";
 import { ServiceBenefits } from "@/components/shared/ServiceBenefits";
 import { ServiceFAQ, FAQItem } from "@/components/shared/ServiceFAQ";
 import { ServiceReadyToLaunch } from "@/components/shared/ServiceReadyToLaunch";
@@ -16,110 +18,76 @@ export const metadata: Metadata = {
 const insuranceSteps: Step[] = [
   {
     number: "01",
-    title: "Assess your needs",
+    title: "Compare Quotes",
     description:
-      "Tell us about your business, team size, and industry. Our AI analyzes your requirements and recommends the right insurance coverage.",
+      "Instantly view offers from trusted insurance providers in seconds with no need to fill out multiple forms.",
     image: {
       type: "jurisdiction",
-      mainImage: "/img/888-1.png",
-      overlayImage: "/img/image-1374.png",
+      mainImage: "/img/bg-variants/bg-variant-3.png",
+      overlayImage: "/img/insurance/how-it-works/compare-quotes.png",
     },
     isActive: true,
     alignment: "right",
   },
   {
     number: "02",
-    title: "Compare quotes",
+    title: "Select a Policy",
     description:
-      "Review tailored quotes from leading insurance providers. Compare coverage, premiums, and benefits side-by-side.",
+      "Choose the plan that matches your business or family needs, with full pricing transparency.",
     image: {
-      type: "documents",
-      content: {
-        step: "1 of 3 steps",
-        title: "Insurance Quote",
-        description:
-          "Compare comprehensive coverage options from multiple providers. Get the best rates for your business needs.",
-      },
+      type: "jurisdiction",
+      mainImage: "/img/bg-variants/bg-variant-7.png",
+      overlayImage: "/img/insurance/how-it-works/select-policy.png",
     },
     isActive: false,
     alignment: "left",
   },
   {
     number: "03",
-    title: "Select your plan",
+    title: "Smart Document Handling",
     description:
-      "Choose the coverage that fits your budget and needs. We help you understand policy terms and make informed decisions.",
+      "Our system auto completes, verifies, and submits your application so you can skip the manual work.",
     image: {
-      type: "processing",
-      stars: [
-        {
-          className: "ml-[-5279.9px] w-[17.59px] h-[16.06px] mt-[-2745.1px]",
-          src: "/img/star-1.svg",
-        },
-        {
-          className: "ml-[51.6px] w-[13.03px] h-[13.22px] mt-[2753.1px]",
-          src: "/img/star-4.svg",
-        },
-      ],
-      message: "Processing your insurance application...",
+      type: "jurisdiction",
+      mainImage: "/img/bg-variants/bg-variant-2.png",
+      overlayImage: "/img/insurance/how-it-works/smart-document-handling.png",
     },
     isActive: false,
     alignment: "right",
   },
   {
     number: "04",
-    title: "Get covered",
+    title: "Track Renewals",
     description:
-      "Your policy is activated instantly. Receive digital policy documents and insurance cards for your entire team.",
+      "Never miss a deadline by getting notified before your policy expires and renewing in just a few clicks.",
     image: {
-      type: "approved",
-      confettiGif:
-        "/img/https-lottiefiles-com-animations-confetti-partyyy-wa6zqqu2jw.gif",
-      congratsTitle: "You're Covered!",
-      congratsMessage: "Your business insurance is now active.",
+      type: "jurisdiction",
+      mainImage: "/img/bg-variants/bg-variant-5.png",
+      overlayImage: "/img/insurance/how-it-works/track-renewals.png",
     },
     isActive: false,
     alignment: "left",
-  },
-  {
-    number: "05",
-    title: "Ongoing support",
-    description:
-      "File claims, add team members, and manage renewals through your dashboard. Our support team is here whenever you need assistance.",
-    image: {
-      type: "golive",
-      mainImage: "/img/333-1.png",
-      overlayImage: "/img/image-1374-1.png",
-    },
-    isActive: false,
-    alignment: "right",
   },
 ];
 
 const insuranceBenefits = [
   {
-    title: "Health insurance",
-    description: "Comprehensive medical coverage for you and your employees",
-    image: "/img/frame-2095585971.png",
-    imageAlt: "Health insurance coverage",
+    title: "Choose Freely",
+    description: "Find the best insurance coverage available",
+    image: "/img/insurance/benefits/benefit-1.png",
+    imageAlt: "Choose freely insurance coverage options",
   },
   {
-    title: "Liability protection",
-    description: "Professional and general liability insurance for your business",
-    image: "/img/frame-2095585971-1.png",
-    imageAlt: "Liability insurance",
+    title: "Clear, Upfront Pricing",
+    description: "No hidden fees, just clean, honest quotes.",
+    image: "/img/insurance/benefits/benefit-2.png",
+    imageAlt: "Clear upfront pricing for insurance",
   },
   {
-    title: "Claims made easy",
-    description: "Simple claims process with dedicated support and fast approvals",
-    image: "/img/frame-1686557309.png",
-    imageAlt: "Claims processing",
-    additionalImage: {
-      src: "/img/14-a-1.png",
-      alt: "Support icon",
-      className:
-        "absolute top-[calc(50%-24px)] left-[calc(50%+67px)] w-[103px] h-[103px] object-cover",
-    },
+    title: "Fast, Digital Processing",
+    description: "Save time with streamlined, paperless workflows.",
+    image: "/img/insurance/benefits/benefit-3.png",
+    imageAlt: "Fast digital processing for insurance",
   },
 ];
 
@@ -194,20 +162,102 @@ export default function InsurancePage() {
             icon: "/img/chevron-right.svg",
           }}
           heroImage={{
-            src: "/img/accounting-transaction.png",
+            src: "/img/insurance-hero-5x.png",
             alt: "Insurance management dashboard showing policy overview and coverage details",
-            width: 604,
-            height: 474,
+            width: 1875,
+            height: 1508,
           }}
           variant="accounting"
+        />
+        <CoverageOptions
+          badge={{
+            icon: "/img/file-shield-01.svg",
+            text: "Coverage Options",
+          }}
+          heading="Tailored Coverage for Every Need"
+          cards={[
+            {
+              title: "Health Insurance",
+              description: "Protect your team's well-being with flexible health plans.",
+              image: "/img/insurance-coverage-card-1.png",
+              imageAlt: "Health insurance coverage options",
+            },
+            {
+              title: "Liability & Property",
+              description: "Secure your assets and operations from risk.",
+              image: "/img/insurance-coverage-card-2.png",
+              imageAlt: "Liability and property insurance coverage",
+            },
+            {
+              title: "Custom Plans",
+              description: "Mix and match coverage that fits your business stage and industry.",
+              image: "/img/insurance-coverage-card-3.png",
+              imageAlt: "Custom insurance plans",
+            },
+          ]}
         />
         <ServiceHowItWorks
           badge={{
             icon: "/img/dataflow-03.svg",
             text: "How It Works",
           }}
-          heading="Get Covered in 5 Simple Steps"
+          heading="How Can You Get Covered Effortlessly?"
           steps={insuranceSteps}
+        />
+        <BackedBy
+          badge={{
+            icon: "/img/shield-03.svg",
+            text: "Backed by",
+          }}
+          heading="Backed by the Best in Insurance"
+          description="Access competitive policies from our network of licensed providers, vetted for speed, transparency, and service."
+          partners={[
+            {
+              name: "Partner 1",
+              logo: "/img/insurance/backed-by/company-logo-1.png",
+              alt: "Insurance partner logo 1",
+            },
+            {
+              name: "Partner 2",
+              logo: "/img/insurance/backed-by/company-logo-2.png",
+              alt: "Insurance partner logo 2",
+            },
+            {
+              name: "Partner 3",
+              logo: "/img/insurance/backed-by/company-logo-3.png",
+              alt: "Insurance partner logo 3",
+            },
+            {
+              name: "Partner 4",
+              logo: "/img/insurance/backed-by/company-logo-4.png",
+              alt: "Insurance partner logo 4",
+            },
+            {
+              name: "Partner 5",
+              logo: "/img/insurance/backed-by/company-logo-5.png",
+              alt: "Insurance partner logo 5",
+            },
+            {
+              name: "Partner 6",
+              logo: "/img/insurance/backed-by/company-logo-6.png",
+              alt: "Insurance partner logo 6",
+            },
+            {
+              name: "Partner 7",
+              logo: "/img/insurance/backed-by/company-logo-7.png",
+              alt: "Insurance partner logo 7",
+            },
+            {
+              name: "Partner 8",
+              logo: "/img/insurance/backed-by/company-logo-8.png",
+              alt: "Insurance partner logo 8",
+            },
+            {
+              name: "Partner 9",
+              logo: "/img/insurance/backed-by/company-logo-9.png",
+              alt: "Insurance partner logo 9",
+            },
+          ]}
         />
         <ServiceBenefits
           badge={{
@@ -247,8 +297,8 @@ export default function InsurancePage() {
             ariaLabel: "Request a demo",
           }}
           image={{
-            src: "/img/progress-tracker-bank-account.png",
-            alt: "Insurance application progress tracker",
+            src: "/img/insurance/cta/insurance-cta-image.png",
+            alt: "Insurance CTA image showing business protection",
           }}
         />
       </main>

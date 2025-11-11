@@ -4,9 +4,11 @@ import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 export interface StepImage {
-  type: "jurisdiction" | "documents" | "processing" | "approved" | "golive";
+  type: "jurisdiction" | "documents" | "processing" | "approved" | "golive" | "simple";
   mainImage?: string;
   overlayImage?: string;
+  backgroundImage?: string; // Background image for the card container
+  secondOverlayImage?: string; // Second overlay image (e.g., for AI calculates step)
   content?: {
     step: string;
     title: string;
@@ -144,7 +146,41 @@ export const ServiceHowItWorks = ({
             {step.alignment === "left" && (
               <div className="flex flex-col items-start lg:items-end gap-6 md:gap-8 lg:gap-[var(--3-spacing-spacing-3xl)] pt-2 md:pt-[var(--3-spacing-spacing-md)] pb-8 md:pb-[var(--3-spacing-spacing-4xl)] px-0 relative w-full lg:w-[500px] order-2 lg:order-1">
                 {/* Visual card */}
-                <div className="relative w-full h-56 md:h-64 lg:h-72 rounded-2xl md:rounded-3xl overflow-hidden shadow-[inset_0px_0px_0.33px_0.33px_#ffffff,0px_20px_20px_-4px_#00000003,0px_6.38px_6.38px_-3px_#00000008,0px_2.41px_2.41px_-2px_#0000000a,0px_0.8px_0.8px_-1px_#0000000a] bg-[linear-gradient(180deg,rgba(246,241,252,0.5)_0%,rgba(255,255,255,0.5)_100%)] flex items-center justify-center p-4 md:p-6">
+                <div 
+                  className="relative w-full h-56 md:h-64 lg:h-72 rounded-2xl md:rounded-3xl overflow-hidden shadow-[inset_0px_0px_0.33px_0.33px_#ffffff,0px_20px_20px_-4px_#00000003,0px_6.38px_6.38px_-3px_#00000008,0px_2.41px_2.41px_-2px_#0000000a,0px_0.8px_0.8px_-1px_#0000000a] bg-[linear-gradient(180deg,rgba(246,241,252,0.5)_0%,rgba(255,255,255,0.5)_100%)] flex items-center justify-center p-4 md:p-6"
+                  style={step.image.backgroundImage ? {
+                    backgroundImage: `url(${step.image.backgroundImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  } : {}}
+                >
+                  {/* Simple type with background and main image */}
+                  {step.image.type === "simple" && step.image.mainImage && (
+                    <>
+                      <div className="relative inline-flex flex-col items-start p-0.5 md:p-1 bg-[#1d18340f] rounded-lg overflow-hidden border-[0.17px] border-solid border-white shadow-[0px_10px_20px_-4px_#10182824] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] z-10">
+                        <Image
+                          className="relative w-[312px] md:w-[364px] h-[203px] md:h-[237px] object-contain rounded"
+                          alt=""
+                          src={step.image.mainImage}
+                          width={364}
+                          height={237}
+                        />
+                      </div>
+                      {step.image.secondOverlayImage && (
+                        <div className="absolute top-4 right-4 w-16 h-16 md:w-20 md:h-20 z-20">
+                          <Image
+                            className="relative w-full h-full object-contain"
+                            alt=""
+                            src={step.image.secondOverlayImage}
+                            width={80}
+                            height={80}
+                          />
+                        </div>
+                      )}
+                    </>
+                  )}
+
                   {/* Jurisdiction and GoLive view for left-aligned steps */}
                   {(step.image.type === "jurisdiction" || step.image.type === "golive") &&
                     step.image.mainImage &&
@@ -292,7 +328,41 @@ export const ServiceHowItWorks = ({
             {step.alignment === "right" && (
               <div className="flex flex-col items-start gap-6 md:gap-8 lg:gap-[var(--3-spacing-spacing-3xl)] pt-2 md:pt-[var(--3-spacing-spacing-md)] pb-8 md:pb-[var(--3-spacing-spacing-4xl)] px-0 relative w-full lg:w-[500px] order-2 lg:order-3">
                 {/* Visual card */}
-                <div className="relative w-full h-56 md:h-64 lg:h-72 rounded-2xl md:rounded-3xl overflow-hidden shadow-[inset_0px_0px_0.33px_0.33px_#ffffff,0px_20px_20px_-4px_#00000003,0px_6.38px_6.38px_-3px_#00000008,0px_2.41px_2.41px_-2px_#0000000a,0px_0.8px_0.8px_-1px_#0000000a] bg-[linear-gradient(180deg,rgba(246,241,252,0.5)_0%,rgba(255,255,255,0.5)_100%)] flex items-center justify-center p-4 md:p-6">
+                <div 
+                  className="relative w-full h-56 md:h-64 lg:h-72 rounded-2xl md:rounded-3xl overflow-hidden shadow-[inset_0px_0px_0.33px_0.33px_#ffffff,0px_20px_20px_-4px_#00000003,0px_6.38px_6.38px_-3px_#00000008,0px_2.41px_2.41px_-2px_#0000000a,0px_0.8px_0.8px_-1px_#0000000a] bg-[linear-gradient(180deg,rgba(246,241,252,0.5)_0%,rgba(255,255,255,0.5)_100%)] flex items-center justify-center p-4 md:p-6"
+                  style={step.image.backgroundImage ? {
+                    backgroundImage: `url(${step.image.backgroundImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  } : {}}
+                >
+                  {/* Simple type with background and main image */}
+                  {step.image.type === "simple" && step.image.mainImage && (
+                    <>
+                      <div className="relative inline-flex flex-col items-start p-0.5 md:p-1 bg-[#1d18340f] rounded-lg overflow-hidden border-[0.17px] border-solid border-white shadow-[0px_10px_20px_-4px_#10182824] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] z-10">
+                        <Image
+                          className="relative w-[312px] md:w-[364px] h-[203px] md:h-[237px] object-contain rounded"
+                          alt=""
+                          src={step.image.mainImage}
+                          width={364}
+                          height={237}
+                        />
+                      </div>
+                      {step.image.secondOverlayImage && (
+                        <div className="absolute top-4 right-4 w-16 h-16 md:w-20 md:h-20 z-20">
+                          <Image
+                            className="relative w-full h-full object-contain"
+                            alt=""
+                            src={step.image.secondOverlayImage}
+                            width={80}
+                            height={80}
+                          />
+                        </div>
+                      )}
+                    </>
+                  )}
+
                   {/* Jurisdiction and GoLive view */}
                   {(step.image.type === "jurisdiction" || step.image.type === "golive") &&
                     step.image.mainImage &&

@@ -17,153 +17,139 @@ export const metadata: Metadata = {
 const legalSteps: Step[] = [
   {
     number: "01",
-    title: "Describe your legal need",
+    title: "Choose a Document Type",
     description:
-      "Tell us about your legal requirement - contracts, agreements, IP registration, or compliance. Our AI matches you with the right legal expert.",
+      "Select from a wide range of legal documents tailored to your business needs.",
     image: {
       type: "jurisdiction",
-      mainImage: "/img/888-1.png",
-      overlayImage: "/img/image-1374.png",
+      mainImage: "/img/bg-variants/bg-variant-1.png",
+      overlayImage: "/img/legal-how-it-works/choose document type.png",
+      backgroundImage: "/img/bg-variants/bg-variant-1.png",
     },
     isActive: true,
     alignment: "right",
   },
   {
     number: "02",
-    title: "Consultation & review",
+    title: "Explain What you Need",
     description:
-      "Get expert consultation from licensed lawyers. They review your situation and provide clear recommendations and next steps.",
+      "Describe your unique request and let our system process it.",
     image: {
-      type: "documents",
-      content: {
-        step: "1 of 3 steps",
-        title: "Legal Consultation",
-        description:
-          "Connect with experienced lawyers who understand your business and local regulations.",
-      },
+      type: "simple",
+      mainImage: "/img/legal-how-it-works/what you need.png",
     },
     isActive: false,
     alignment: "left",
   },
   {
     number: "03",
-    title: "Document preparation",
+    title: "Get a Quote",
     description:
-      "Our legal team drafts, reviews, or amends your documents. Everything is tailored to UAE law and your specific business needs.",
+      "Our connected legal offices review your request and quote their fee.",
     image: {
-      type: "processing",
-      stars: [
-        {
-          className: "ml-[-5279.9px] w-[17.59px] h-[16.06px] mt-[-2745.1px]",
-          src: "/img/star-1.svg",
-        },
-        {
-          className: "ml-[51.6px] w-[13.03px] h-[13.22px] mt-[2753.1px]",
-          src: "/img/star-4.svg",
-        },
-      ],
-      message: "Preparing your legal documents...",
+      type: "simple",
+      mainImage: "/img/legal-how-it-works/Get quote.png",
     },
     isActive: false,
     alignment: "right",
   },
   {
     number: "04",
-    title: "Review & finalize",
+    title: "Download, Sign, and Share",
     description:
-      "You review the documents with explanations of key terms. Request revisions if needed before finalizing.",
+      "Securely finalize your document, ready to sign, store, and share with stakeholders.",
     image: {
-      type: "approved",
-      confettiGif:
-        "/img/https-lottiefiles-com-animations-confetti-partyyy-wa6zqqu2jw.gif",
-      congratsTitle: "Documents Ready!",
-      congratsMessage: "Your legal documents are finalized.",
+      type: "simple",
+      mainImage: "/img/legal-how-it-works/Download,sign.png",
     },
     isActive: false,
     alignment: "left",
-  },
-  {
-    number: "05",
-    title: "Ongoing support",
-    description:
-      "Access your legal documents anytime. Get ongoing support, updates for regulatory changes, and annual compliance reviews.",
-    image: {
-      type: "golive",
-      mainImage: "/img/333-1.png",
-      overlayImage: "/img/image-1374-1.png",
-    },
-    isActive: false,
-    alignment: "right",
   },
 ];
 
 const legalFeatures: Feature[] = [
   {
-    title: "Contract Drafting",
-    description: "Employment contracts, NDAs, service agreements, and commercial contracts.",
-    image: "/img/frame-1686557310.png",
-    imageAlt: "Contract drafting interface",
-    containerWidth: "w-full lg:w-[calc(50%-12px)]",
+    title: "Contract Generator",
+    description: "Create custom contracts in a few clicks",
+    image: "/img/legal-features/with contract generator.png",
+    imageAlt: "Contract generator interface",
+    containerWidth: "w-full lg:w-[calc(33.333%-16px)]",
     imageStyles:
-      "absolute top-[calc(50%_-_120px)] left-[calc(50%_-_182px)] w-[364px] h-[242px]",
+      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[350px] h-auto object-contain",
     mobileImageStyles: "w-full h-auto object-contain",
   },
   {
-    title: "IP Protection",
-    description: "Trademark registration, copyright protection, and brand protection services.",
-    image: "/img/frame-1686557312.png",
-    imageAlt: "IP protection services",
-    containerWidth: "w-full lg:w-[calc(50%-12px)]",
+    title: "Investor & Shareholder Docs",
+    description: "Auto-generate cap tables, SHA, and board resolutions.",
+    image: "/img/legal-features/investor and shareholder.png",
+    imageAlt: "Investor and shareholder documents",
+    containerWidth: "w-full lg:w-[calc(33.333%-16px)]",
     imageStyles:
-      "absolute top-[calc(50%_-_94px)] left-[calc(50%_-_239px)] w-[478px] h-[228px]",
+      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px] h-auto object-contain",
     mobileImageStyles: "w-full h-auto object-contain",
   },
   {
-    title: "Compliance Management",
-    description: "Stay compliant with UAE commercial law, labor law, and industry regulations.",
-    image: "/img/frame-1686557312-1.png",
-    imageAlt: "Compliance management",
-    containerWidth: "w-full lg:w-[calc(50%-12px)]",
+    title: "Dispute Handling",
+    description: "Resolve business or shareholder conflicts quickly.",
+    image: "/img/legal-features/dispute handling.png",
+    imageAlt: "Dispute handling services",
+    containerWidth: "w-full lg:w-[calc(33.333%-16px)]",
     imageStyles:
-      "absolute top-[calc(50%_-_93px)] left-[calc(50%_-_241px)] w-[483px] h-[223px]",
+      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[300px] h-auto object-contain",
     mobileImageStyles: "w-full h-auto object-contain",
   },
   {
-    title: "Dispute Resolution",
-    description: "Legal representation and support for commercial disputes and negotiations.",
-    image: "/img/frame-2095585970.png",
-    imageAlt: "Dispute resolution",
-    containerWidth: "w-full lg:w-[calc(50%-12px)]",
+    title: "Legal Review",
+    description: "Have your documents checked by our legal team.",
+    image: "/img/legal-features/legal review.png",
+    imageAlt: "Legal review services",
+    containerWidth: "w-full lg:w-[calc(33.333%-16px)]",
     imageStyles:
-      "absolute top-[calc(50%_-_101px)] left-[calc(50%_-_210px)] w-[420px] h-[248px]",
+      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px] h-auto object-contain",
     mobileImageStyles: "w-full h-auto object-contain",
+  },
+  {
+    title: "Compliance Checks",
+    description: "Ensure your operations meet country-specific regulatory standards.",
+    image: "/img/legal-features/compliance check.png",
+    imageAlt: "Compliance checks",
+    containerWidth: "w-full lg:w-[calc(33.333%-16px)]",
+    imageStyles:
+      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px] h-auto object-contain",
+    mobileImageStyles: "w-full h-auto object-contain",
+  },
+  {
+    title: "Trademark & IP Protection",
+    description: "Register and protect your brand assets with expert guidance",
+    image: "/img/legal-features/trademark.png",
+    imageAlt: "Trademark and IP protection",
+    containerWidth: "w-full lg:w-[calc(33.333%-16px)]",
+    imageStyles:
+      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[350px] h-auto object-contain",
+    mobileImageStyles: "w-full h-auto object-contain",
+    backgroundImage: "/img/legal-features/BG for trademark.png",
+    backgroundImageOpacity: 0.6,
   },
 ];
 
 const legalBenefits = [
   {
-    title: "Licensed lawyers",
-    description: "All legal work handled by UAE-licensed attorneys with local expertise",
-    image: "/img/frame-2095585971-1.png",
-    imageAlt: "Licensed legal professionals",
+    title: "No Retainers, No Surprises",
+    description: "Only pay for what you use",
+    image: "/img/legal-benefits/benefit 1.png",
+    imageAlt: "No retainers, no surprises",
   },
   {
-    title: "Fixed pricing",
-    description: "Transparent, predictable legal costs with no hidden fees or surprises",
-    image: "/img/frame-2095585971.png",
-    imageAlt: "Fixed legal pricing",
+    title: "Built-In Platform Integration",
+    description: "Seamlessly linked with your payroll, HR, and compliance modules.",
+    image: "/img/legal-benefits/benefit 2.png",
+    imageAlt: "Built-in platform integration",
   },
   {
-    title: "Fast turnaround",
-    description: "Most legal documents delivered within 2-5 business days",
-    image: "/img/frame-1686557309.png",
-    imageAlt: "Fast legal services",
-    additionalImage: {
-      src: "/img/14-a-1.png",
-      alt: "Speed icon",
-      className:
-        "absolute top-[calc(50%-24px)] left-[calc(50%+67px)] w-[103px] h-[103px] object-cover",
-    },
+    title: "Deadline-Driven Legal Help",
+    description: "Track progress, set timelines, and get real-time updates.",
+    image: "/img/legal-benefits/benefit 3.png",
+    imageAlt: "Deadline-driven legal help",
   },
 ];
 
@@ -238,10 +224,10 @@ export default function LegalPage() {
             icon: "/img/chevron-right.svg",
           }}
           heroImage={{
-            src: "/img/accounting-transaction.png",
+            src: "/img/legal-hero-8x.png",
             alt: "Legal services dashboard showing document management and compliance tracking",
-            width: 604,
-            height: 474,
+            width: 3000,
+            height: 2413,
           }}
           variant="accounting"
         />
@@ -252,14 +238,14 @@ export default function LegalPage() {
           }}
           heading="Comprehensive Legal Solutions"
           features={legalFeatures}
-          layout="4-cards"
+          layout="6-cards-3cols"
         />
         <ServiceHowItWorks
           badge={{
             icon: "/img/dataflow-03.svg",
             text: "How It Works",
           }}
-          heading="Legal Support Made Simple"
+          heading="How Does Legal Support Work?"
           steps={legalSteps}
         />
         <ServiceBenefits
@@ -300,8 +286,8 @@ export default function LegalPage() {
             ariaLabel: "Request a demo",
           }}
           image={{
-            src: "/img/progress-tracker-bank-account.png",
-            alt: "Legal services progress tracker",
+            src: "/img/legal-cta/CTA image.png",
+            alt: "Legal services call to action",
           }}
         />
       </main>

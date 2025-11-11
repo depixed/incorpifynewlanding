@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { ServiceHero } from "@/components/shared/ServiceHero";
+import { OtherServicesList } from "@/components/shared/OtherServicesList";
 import { ServiceHowItWorks, Step } from "@/components/shared/ServiceHowItWorks";
 import { ServiceBenefits } from "@/components/shared/ServiceBenefits";
 import { ServiceFAQ, FAQItem } from "@/components/shared/ServiceFAQ";
@@ -16,110 +17,75 @@ export const metadata: Metadata = {
 const otherServicesSteps: Step[] = [
   {
     number: "01",
-    title: "Tell us what you need",
+    title: "Select service",
     description:
-      "Share your business requirements - from PRO services and office space to government approvals and licensing. We'll create a custom solution.",
+      "Choose the compliance service that fits your business requirements.",
     image: {
       type: "jurisdiction",
-      mainImage: "/img/888-1.png",
-      overlayImage: "/img/image-1374.png",
+      mainImage: "/img/bg-variants/bg-variant-3.png",
+      overlayImage: "/img/other-services-how-it-works/select-services.png",
+      backgroundImage: "/img/bg-variants/bg-variant-3.png",
     },
     isActive: true,
     alignment: "right",
   },
   {
     number: "02",
-    title: "Get a tailored proposal",
+    title: "Follow the workflow",
     description:
-      "Receive a comprehensive proposal with service options, timelines, and transparent pricing. No hidden fees or surprises.",
+      "Easily navigate step-by-step processes designed for simplicity and clarity.",
     image: {
-      type: "documents",
-      content: {
-        step: "1 of 3 steps",
-        title: "Service Proposal",
-        description:
-          "Detailed breakdown of services, deliverables, timelines, and costs tailored to your needs.",
-      },
+      type: "simple",
+      mainImage: "/img/other-services-how-it-works/follow-workflow.png",
     },
     isActive: false,
     alignment: "left",
   },
   {
     number: "03",
-    title: "We handle everything",
+    title: "Get AI/Expert support",
     description:
-      "Our team coordinates with government departments, arranges approvals, and manages all documentation. You track progress in real-time.",
+      "Leverage AI-powered tools and professional expertise to stay on track.",
     image: {
-      type: "processing",
-      stars: [
-        {
-          className: "ml-[-5279.9px] w-[17.59px] h-[16.06px] mt-[-2745.1px]",
-          src: "/img/star-1.svg",
-        },
-        {
-          className: "ml-[51.6px] w-[13.03px] h-[13.22px] mt-[2753.1px]",
-          src: "/img/star-4.svg",
-        },
-      ],
-      message: "Processing your requirements...",
+      type: "simple",
+      mainImage: "/img/other-services-how-it-works/get-ai-expert-support.png",
+      secondOverlayImage: "/img/other-services-how-it-works/with-ai-expert-support.png",
     },
     isActive: false,
     alignment: "right",
   },
   {
     number: "04",
-    title: "Service delivered",
+    title: "Monitor using the tracker",
     description:
-      "Receive all completed documents, approvals, or access to services. Everything is organized and ready for your business operations.",
+      "Keep real-time visibility on progress with automated status updates.",
     image: {
-      type: "approved",
-      confettiGif:
-        "/img/https-lottiefiles-com-animations-confetti-partyyy-wa6zqqu2jw.gif",
-      congratsTitle: "All Set!",
-      congratsMessage: "Your services are ready to use.",
+      type: "simple",
+      mainImage: "/img/other-services-how-it-works/monitor-tracker.png",
     },
     isActive: false,
     alignment: "left",
-  },
-  {
-    number: "05",
-    title: "Ongoing support",
-    description:
-      "Access continuous support for renewals, modifications, and additional services as your business grows and evolves.",
-    image: {
-      type: "golive",
-      mainImage: "/img/333-1.png",
-      overlayImage: "/img/image-1374-1.png",
-    },
-    isActive: false,
-    alignment: "right",
   },
 ];
 
 const otherServicesBenefits = [
   {
-    title: "PRO services",
-    description: "Government liaison, visa processing, and documentation services",
-    image: "/img/frame-2095585971.png",
-    imageAlt: "PRO services",
+    title: "All-in-one dashboard",
+    description: "All the services you don't know you need yet, in one place.",
+    image: "/img/other-services-benefits/all-in-one-dashboard.png",
+    imageAlt: "All-in-one dashboard showing various services",
   },
   {
-    title: "Office solutions",
-    description: "Physical offices, virtual offices, and co-working space arrangements",
-    image: "/img/frame-2095585971-1.png",
-    imageAlt: "Office space solutions",
+    title: "Smart Reminders",
+    description: "Never miss a deadline or renewal.",
+    image: "/img/other-services-benefits/smart-reminder.png",
+    imageAlt: "Smart reminders notification system",
   },
   {
-    title: "Business support",
-    description: "Meeting rooms, mail handling, phone answering, and admin support",
-    image: "/img/frame-1686557309.png",
-    imageAlt: "Business support services",
-    additionalImage: {
-      src: "/img/14-a-1.png",
-      alt: "Support icon",
-      className:
-        "absolute top-[calc(50%-24px)] left-[calc(50%+67px)] w-[103px] h-[103px] object-cover",
-    },
+    title: "Local Expertise",
+    description: "Built for GCC businesses.",
+    image: "/img/other-services-benefits/local-expertise.png",
+    imageAlt: "Local expertise for GCC businesses",
   },
 ];
 
@@ -194,19 +160,20 @@ export default function OtherServicesPage() {
             icon: "/img/chevron-right.svg",
           }}
           heroImage={{
-            src: "/img/accounting-transaction.png",
+            src: "/img/other-services-hero-5x.png",
             alt: "Business services dashboard showing various support services and solutions",
-            width: 604,
-            height: 474,
+            width: 1247,
+            height: 1441,
           }}
           variant="accounting"
         />
+        <OtherServicesList />
         <ServiceHowItWorks
           badge={{
             icon: "/img/dataflow-03.svg",
             text: "How It Works",
           }}
-          heading="Seamless Business Support"
+          heading="How We Help You Stay Compliant?"
           steps={otherServicesSteps}
         />
         <ServiceBenefits
@@ -214,7 +181,7 @@ export default function OtherServicesPage() {
             icon: "/img/stars-02.svg",
             text: "Benefits",
           }}
-          heading="Why Choose Incorpify?"
+          heading="Why Incorpify for Extra Services?"
           benefits={otherServicesBenefits}
         />
         <ServiceFAQ
@@ -247,8 +214,8 @@ export default function OtherServicesPage() {
             ariaLabel: "Request a demo",
           }}
           image={{
-            src: "/img/progress-tracker-bank-account.png",
-            alt: "Business services progress tracker",
+            src: "/img/other-services-cta/cta-image.png",
+            alt: "Business services call to action",
           }}
         />
       </main>

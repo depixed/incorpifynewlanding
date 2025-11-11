@@ -17,152 +17,143 @@ export const metadata: Metadata = {
 const payrollSteps: Step[] = [
   {
     number: "01",
-    title: "Add your team",
+    title: "Add Employees",
     description:
-      "Upload employee details, salary structures, and benefit information. Our system validates everything for WPS compliance.",
+      "Easily onboard your team by adding employee details to the system in minutes.",
     image: {
-      type: "jurisdiction",
-      mainImage: "/img/888-1.png",
-      overlayImage: "/img/image-1374.png",
+      type: "simple",
+      mainImage: "/img/payroll-how-it-works/add-employees.png",
+      backgroundImage: "/img/bg-variants/bg-variant-3.png",
     },
     isActive: true,
     alignment: "right",
   },
   {
     number: "02",
-    title: "Configure payroll",
+    title: "AI Calculates Payroll",
     description:
-      "Set up salary schedules, allowances, deductions, and overtime rules. Our AI ensures accuracy and compliance with UAE labor law.",
+      "Let AI handle salary, benefits, and deductions with speed and precision.",
     image: {
-      type: "documents",
-      content: {
-        step: "1 of 3 steps",
-        title: "Payroll Setup",
-        description:
-          "Configure salary structures, allowances, and deductions. Ensure WPS compliance from day one.",
-      },
+      type: "simple",
+      mainImage: "/img/payroll-how-it-works/ai-calculates.png",
+      secondOverlayImage: "/img/payroll-how-it-works/with-ai-calculates.png",
     },
     isActive: false,
     alignment: "left",
   },
   {
     number: "03",
-    title: "Automated processing",
+    title: "Send Payslips",
     description:
-      "Payroll runs automatically each month. We calculate salaries, deductions, end-of-service benefits, and generate all required reports.",
+      "Distribute professional payslips directly to employees' accounts securely.",
     image: {
-      type: "processing",
-      stars: [
-        {
-          className: "ml-[-5279.9px] w-[17.59px] h-[16.06px] mt-[-2745.1px]",
-          src: "/img/star-1.svg",
-        },
-        {
-          className: "ml-[51.6px] w-[13.03px] h-[13.22px] mt-[2753.1px]",
-          src: "/img/star-4.svg",
-        },
-      ],
-      message: "Processing payroll calculations...",
+      type: "simple",
+      mainImage: "/img/payroll-how-it-works/send-payslips.png",
     },
     isActive: false,
     alignment: "right",
   },
   {
     number: "04",
-    title: "WPS submission",
+    title: "WPS File Submitted",
     description:
-      "We submit your payroll to WPS (Wage Protection System) and coordinate bank transfers. All documentation is handled automatically.",
+      "Stay compliant with WPS by automatically generating and submitting files on time.",
     image: {
-      type: "approved",
-      confettiGif:
-        "/img/https-lottiefiles-com-animations-confetti-partyyy-wa6zqqu2jw.gif",
-      congratsTitle: "Payroll Complete!",
-      congratsMessage: "Your team's salaries have been processed.",
+      type: "simple",
+      mainImage: "/img/payroll-how-it-works/wps-file.png",
     },
     isActive: false,
     alignment: "left",
-  },
-  {
-    number: "05",
-    title: "Employee portal",
-    description:
-      "Employees access payslips, leave balances, and salary history through their personal portal. Everything is transparent and accessible 24/7.",
-    image: {
-      type: "golive",
-      mainImage: "/img/333-1.png",
-      overlayImage: "/img/image-1374-1.png",
-    },
-    isActive: false,
-    alignment: "right",
   },
 ];
 
 const payrollFeatures: Feature[] = [
   {
+    title: "Salary Processing",
+    description: "Seamlessly calculate and disburse salaries on time, every time.",
+    image: "/img/payroll-features/salary-processing.png",
+    imageAlt: "Salary processing dashboard",
+    containerWidth: "w-full lg:w-[calc(50%-12px)]",
+    imageStyles:
+      "absolute top-[calc(50%_-_120px)] left-[calc(50%_-_200px)] w-[400px] h-[240px] object-contain",
+    mobileImageStyles: "w-full h-auto object-contain",
+  },
+  {
+    title: "Tax & GOSI Deductions",
+    description: "Handle complex deductions without spreadsheets.",
+    image: "/img/payroll-features/tax-and-gosi.png",
+    imageAlt: "Tax and GOSI deductions management",
+    containerWidth: "w-full lg:w-[calc(50%-12px)]",
+    imageStyles:
+      "absolute top-[calc(50%_-_120px)] left-[calc(50%_-_200px)] w-[400px] h-[240px] object-contain",
+    mobileImageStyles: "w-full h-auto object-contain",
+  },
+  {
     title: "WPS Compliance",
-    description: "Automated Wage Protection System submissions and bank file generation.",
-    image: "/img/frame-1686557310.png",
+    description: "Stay fully compliant with WPS regulations.",
+    image: "/img/payroll-features/wps.png",
     imageAlt: "WPS compliance dashboard",
     containerWidth: "w-full lg:w-[calc(50%-12px)]",
     imageStyles:
-      "absolute top-[calc(50%_-_120px)] left-[calc(50%_-_182px)] w-[364px] h-[242px]",
+      "absolute top-[calc(50%_-_120px)] left-[calc(50%_-_200px)] w-[400px] h-[240px] object-contain",
+    mobileImageStyles: "w-full h-auto object-contain",
+    backgroundImage: "/img/payroll-features/wps-background.png",
+  },
+  {
+    title: "Employee Onboarding",
+    description: "Onboard new hires and auto-sync their payroll setup in minutes.",
+    image: "/img/payroll-features/employee-onboarding.png",
+    imageAlt: "Employee onboarding system",
+    containerWidth: "w-full lg:w-[calc(50%-12px)]",
+    imageStyles:
+      "absolute top-[calc(50%_-_120px)] left-[calc(50%_-_200px)] w-[400px] h-[240px] object-contain",
     mobileImageStyles: "w-full h-auto object-contain",
   },
   {
-    title: "Leave Management",
-    description: "Track annual leave, sick leave, and time-off requests seamlessly.",
-    image: "/img/frame-1686557312.png",
-    imageAlt: "Leave management system",
+    title: "Leave & Bonus Management",
+    description: "Manage time-off, holidays, and bonus payouts with ease.",
+    image: "/img/payroll-features/leave-and-bonus.png",
+    imageAlt: "Leave and bonus management",
     containerWidth: "w-full lg:w-[calc(50%-12px)]",
     imageStyles:
-      "absolute top-[calc(50%_-_94px)] left-[calc(50%_-_239px)] w-[478px] h-[228px]",
+      "absolute top-[calc(50%_-_120px)] left-[calc(50%_-_200px)] w-[400px] h-[240px] object-contain",
     mobileImageStyles: "w-full h-auto object-contain",
   },
   {
-    title: "End of Service",
-    description: "Automatic calculation of gratuity and end-of-service benefits.",
-    image: "/img/frame-1686557312-1.png",
-    imageAlt: "End of service calculator",
+    title: "Payroll Reports",
+    description: "Get instant access to payroll history and downloadable reports.",
+    image: "/img/payroll-features/payroll-reports.png",
+    imageAlt: "Payroll reports dashboard",
     containerWidth: "w-full lg:w-[calc(50%-12px)]",
     imageStyles:
-      "absolute top-[calc(50%_-_93px)] left-[calc(50%_-_241px)] w-[483px] h-[223px]",
-    mobileImageStyles: "w-full h-auto object-contain",
-  },
-  {
-    title: "Payslip Portal",
-    description: "Digital payslips accessible to employees anytime, anywhere.",
-    image: "/img/frame-2095585970.png",
-    imageAlt: "Employee payslip portal",
-    containerWidth: "w-full lg:w-[calc(50%-12px)]",
-    imageStyles:
-      "absolute top-[calc(50%_-_101px)] left-[calc(50%_-_210px)] w-[420px] h-[248px]",
+      "absolute top-[calc(50%_-_120px)] left-[calc(50%_-_200px)] w-[400px] h-[240px] object-contain",
     mobileImageStyles: "w-full h-auto object-contain",
   },
 ];
 
 const payrollBenefits = [
   {
-    title: "Automated calculations",
-    description: "No more manual errors - automated salary, overtime, and deduction calculations",
-    image: "/img/frame-2095585971.png",
-    imageAlt: "Automated payroll calculations",
+    title: "Seamless Integrations",
+    description: "Connect directly with banks, tax, and visa systems.",
+    image: "/img/payroll-benefits/seamless-integrations.png",
+    imageAlt: "Seamless integrations with banks and systems",
   },
   {
-    title: "Multi-currency support",
-    description: "Pay international teams in their local currency with automatic conversions",
-    image: "/img/frame-2095585971-1.png",
-    imageAlt: "Multi-currency payroll",
+    title: "100% Local Compliance",
+    description: "Stay aligned with WPS, GOSI, and tax rules by default.",
+    image: "/img/payroll-benefits/100-local.png",
+    imageAlt: "100% local compliance with regulations",
   },
   {
-    title: "Compliance guaranteed",
-    description: "Stay compliant with UAE labor law and WPS regulations automatically",
-    image: "/img/frame-1686557309.png",
-    imageAlt: "Compliance management",
+    title: "Fewer Errors, Less Stress",
+    description: "Automation reduces mistakes and saves valuable time.",
+    image: "/img/payroll-benefits/fewer-errors.png",
+    imageAlt: "Fewer errors with automation",
     additionalImage: {
-      src: "/img/14-a-1.png",
-      alt: "Compliance icon",
+      src: "/img/payroll-benefits/with-fewer-errors.png",
+      alt: "Error reduction icon",
       className:
-        "absolute top-[calc(50%-24px)] left-[calc(50%+67px)] w-[103px] h-[103px] object-cover",
+        "absolute top-4 right-4 w-16 h-16 md:w-20 md:h-20 object-contain z-10",
     },
   },
 ];
@@ -224,26 +215,20 @@ export default function PayrollPage() {
       <Header />
       <main className="w-full">
         <ServiceHero
-          title="Payroll Processing Made Effortless"
-          description="Automated payroll, WPS compliance, and employee management. Focus on your business while we handle your payroll."
+          title="Automated Payroll That Works for You"
+          description="Run compliant payroll in UAE & KSA, zero hassle."
           primaryCta={{
-            text: "Get Started",
+            text: "Speak to a Payroll Specialist",
             href: "#get-started",
-            ariaLabel: "Get started with payroll services",
-          }}
-          secondaryCta={{
-            text: "Talk to Payroll Expert",
-            href: "#talk-to-expert",
-            ariaLabel: "Talk to a payroll expert",
-            icon: "/img/chevron-right.svg",
+            ariaLabel: "Speak to a payroll specialist",
           }}
           heroImage={{
-            src: "/img/accounting-transaction.png",
+            src: "/img/hero/payroll-tab-desktop.png",
             alt: "Payroll management dashboard showing salary processing and WPS compliance",
-            width: 604,
-            height: 474,
+            width: 1200,
+            height: 800,
           }}
-          variant="accounting"
+          variant="payroll"
         />
         <ServiceOurFeatures
           badge={{
@@ -252,7 +237,7 @@ export default function PayrollPage() {
           }}
           heading="Everything You Need for Payroll"
           features={payrollFeatures}
-          layout="4-cards"
+          layout="6-cards"
         />
         <ServiceHowItWorks
           badge={{
@@ -300,7 +285,7 @@ export default function PayrollPage() {
             ariaLabel: "Request a demo",
           }}
           image={{
-            src: "/img/progress-tracker-bank-account.png",
+            src: "/img/payroll-cta/cta-image.png",
             alt: "Payroll processing progress tracker",
           }}
         />

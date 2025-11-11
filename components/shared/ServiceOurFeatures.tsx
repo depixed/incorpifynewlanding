@@ -12,6 +12,8 @@ export interface Feature {
   imageStyles: string; // Desktop positioning styles
   mobileImageStyles: string; // Mobile responsive styles
   specialRender?: "financial-insights" | "audits" | "default"; // Special rendering for specific card types
+  backgroundImage?: string; // Optional background image for the card container
+  backgroundImageOpacity?: number; // Opacity for background image (0-1, default 1)
 }
 
 interface Badge {
@@ -23,7 +25,7 @@ interface ServiceOurFeaturesProps {
   badge: Badge;
   heading: string;
   features: Feature[];
-  layout?: "2-cards" | "4-cards" | "6-cards"; // Number of cards
+  layout?: "2-cards" | "4-cards" | "6-cards" | "6-cards-3cols"; // Number of cards
 }
 
 export const ServiceOurFeatures = ({
@@ -43,19 +45,37 @@ export const ServiceOurFeatures = ({
           feature.containerWidth || "w-full"
         } flex flex-col min-h-[350px] md:min-h-[400px] lg:h-[420px] items-start gap-4 md:gap-6 p-4 md:p-6 relative rounded-2xl lg:rounded-3xl overflow-hidden bg-white shadow-[0px_4px_6px_-2px_rgba(16,24,40,0.03),0px_12px_16px_-4px_rgba(16,24,40,0.08)] border border-solid border-gray-200`}
       >
-        <div className="relative flex-1 self-stretch w-full bg-gray-50 rounded-2xl lg:rounded-3xl overflow-hidden shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] border border-solid border-gray-100">
-          {/* Background gradient blur */}
-          <div
-            className={`hidden lg:block absolute top-0 left-[calc(50%_-_504px)] w-[1008px] h-[780px] rounded-[504px/390px] blur-[56.25px] ${
-              index === 1 || index === 5
-                ? "[background:radial-gradient(50%_50%_at_42%_50%,rgba(29,24,52,0.04)_0%,rgba(29,24,52,0)_100%)]"
-                : "[background:radial-gradient(50%_50%_at_42%_50%,rgba(150,91,228,0.04)_0%,rgba(150,91,228,0)_100%)]"
-            }`}
-          />
+        <div 
+          className="relative flex-1 self-stretch w-full bg-gray-50 rounded-2xl lg:rounded-3xl overflow-hidden shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] border border-solid border-gray-100"
+        >
+          {/* Background image layer with opacity */}
+          {feature.backgroundImage && (
+            <div
+              className="absolute inset-0 rounded-2xl lg:rounded-3xl"
+              style={{
+                backgroundImage: `url(${feature.backgroundImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                opacity: feature.backgroundImageOpacity !== undefined ? feature.backgroundImageOpacity : 1
+              }}
+              aria-hidden="true"
+            />
+          )}
+          {/* Background gradient blur - only show if no background image */}
+          {!feature.backgroundImage && (
+            <div
+              className={`hidden lg:block absolute top-0 left-[calc(50%_-_504px)] w-[1008px] h-[780px] rounded-[504px/390px] blur-[56.25px] ${
+                index === 1 || index === 5
+                  ? "[background:radial-gradient(50%_50%_at_42%_50%,rgba(29,24,52,0.04)_0%,rgba(29,24,52,0)_100%)]"
+                  : "[background:radial-gradient(50%_50%_at_42%_50%,rgba(150,91,228,0.04)_0%,rgba(150,91,228,0)_100%)]"
+              }`}
+            />
+          )}
 
           {/* Desktop Image Rendering with special cases */}
           {isFinancialInsights ? (
-            <div className="hidden lg:flex flex-col w-[400px] items-start justify-center gap-[10.43px] absolute top-[41px] left-[calc(50%_-_220px)] rounded-[10.69px] overflow-hidden border-[0.43px] border-solid border-1-color-modes-colors-border-border-secondary rotate-[4deg] shadow-[0px_7.13px_7.13px_-3.56px_#10182808,0px_17.82px_21.38px_-3.56px_#10182814] backdrop-blur-[9.27px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(9.27px)_brightness(100%)]">
+            <div className="hidden lg:flex flex-col w-[400px] items-start justify-center gap-[10.43px] absolute top-[41px] left-[calc(50%_-_220px)] rounded-[10.69px] overflow-hidden border-[0.43px] border-solid border-1-color-modes-colors-border-border-secondary rotate-[4deg] shadow-[0px_7.13px_7.13px_-3.56px_#10182808,0px_17.82px_21.38px_-3.56px_#10182814] backdrop-blur-[9.27px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(9.27px)_brightness(100%)] z-10">
               <img
                 className={feature.imageStyles}
                 alt={feature.imageAlt}
@@ -63,7 +83,7 @@ export const ServiceOurFeatures = ({
               />
             </div>
           ) : isAudits ? (
-            <div className="hidden lg:inline-flex flex-col items-start p-[7.17px] absolute top-[calc(50%_-_102px)] left-[calc(50%_-_215px)] bg-[#1d18340f] rounded-[16.73px] overflow-hidden border border-solid border-1-color-modes-colors-foreground-fg-white shadow-[0px_0.72px_1.43px_#1018280f,0px_0.72px_2.15px_#1018281a] backdrop-blur-[7.17px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.17px)_brightness(100%)]">
+            <div className="hidden lg:inline-flex flex-col items-start p-[7.17px] absolute top-[calc(50%_-_102px)] left-[calc(50%_-_215px)] bg-[#1d18340f] rounded-[16.73px] overflow-hidden border border-solid border-1-color-modes-colors-foreground-fg-white shadow-[0px_0.72px_1.43px_#1018280f,0px_0.72px_2.15px_#1018281a] backdrop-blur-[7.17px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.17px)_brightness(100%)] z-10">
               <img
                 className={feature.imageStyles}
                 alt={feature.imageAlt}
@@ -72,14 +92,14 @@ export const ServiceOurFeatures = ({
             </div>
           ) : (
             <img
-              className={`hidden lg:block ${feature.imageStyles}`}
+              className={`hidden lg:block ${feature.imageStyles} relative z-10`}
               alt={feature.imageAlt}
               src={feature.image}
             />
           )}
 
           {/* Mobile/Tablet Image Rendering */}
-          <div className="lg:hidden flex items-center justify-center w-full h-full p-4">
+          <div className="lg:hidden flex items-center justify-center w-full h-full p-4 relative z-10">
             <Image
               className={feature.mobileImageStyles}
               alt={feature.imageAlt}
@@ -129,6 +149,23 @@ export const ServiceOurFeatures = ({
               {features
                 .slice(2, 4)
                 .map((feature, index) => renderFeatureCard(feature, index + 2))}
+            </div>
+          </>
+        );
+
+      case "6-cards-3cols":
+        // Two rows with 3 cards each
+        return (
+          <>
+            <div className="flex flex-col lg:flex-row items-start gap-6 relative self-stretch w-full">
+              {features
+                .slice(0, 3)
+                .map((feature, index) => renderFeatureCard(feature, index))}
+            </div>
+            <div className="flex flex-col lg:flex-row items-start gap-6 relative self-stretch w-full">
+              {features
+                .slice(3, 6)
+                .map((feature, index) => renderFeatureCard(feature, index + 3))}
             </div>
           </>
         );
