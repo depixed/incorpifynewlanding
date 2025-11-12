@@ -127,15 +127,37 @@ export const ExtraServicesCard: React.FC<ExtraServicesCardProps> = ({
 
   return (
     <article
-      className="absolute top-0 left-0 w-full h-[550px] md:h-[600px] lg:h-[468px] flex flex-col lg:flex-row items-stretch bg-white rounded-2xl lg:rounded-[32px] border border-solid border-1-color-modes-colors-foreground-fg-white shadow-[inset_0px_0px_1px_1px_#ffffff,0px_20px_20px_-4px_#00000003,0px_6.38px_6.38px_-3px_#00000008,0px_2.41px_2.41px_-2px_#0000000a,0px_0.8px_0.8px_-1px_#0000000a,0px_8px_8px_-4px_#10182808] overflow-hidden"
+      className="absolute top-0 left-0 w-full h-auto md:h-auto lg:h-[468px] flex flex-col lg:flex-row items-stretch bg-white rounded-2xl lg:rounded-[32px] border border-solid border-1-color-modes-colors-foreground-fg-white shadow-[inset_0px_0px_1px_1px_#ffffff,0px_20px_20px_-4px_#00000003,0px_6.38px_6.38px_-3px_#00000008,0px_2.41px_2.41px_-2px_#0000000a,0px_0.8px_0.8px_-1px_#0000000a,0px_8px_8px_-4px_#10182808] overflow-hidden"
       style={{
         transform: `translateY(${finalTranslateY}vh)`,
         zIndex: zIndex,
         transition: 'transform 0.1s linear',
       }}
     >
+      {/* Image Section - Top on mobile, hidden on desktop */}
+      <aside
+        className="lg:hidden relative w-full h-[220px] md:h-[280px] rounded-[16px_16px_0px_0px] overflow-hidden border-b [border-style:solid] border-1-color-modes-component-colors-utility-purple-utility-purple-100"
+        aria-label="Extra services preview"
+      >
+        <div className="relative w-full h-full">
+          <img
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt=""
+            src="/img/111-1.png"
+            aria-hidden="true"
+          />
+          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center py-8">
+            <img
+              className="w-[90%] md:w-[80%] h-auto max-h-full object-contain"
+              alt="Extra services"
+              src="/img/our-features/more.png"
+            />
+          </div>
+        </div>
+      </aside>
+
       {/* Left Content Section */}
-      <section className="flex flex-col w-full lg:w-[600px] items-start gap-6 md:gap-7 lg:gap-[var(--3-spacing-spacing-3xl)] p-6 md:p-8 lg:pt-[var(--3-spacing-spacing-4xl)] lg:pr-[var(--3-spacing-spacing-4xl)] lg:pb-[var(--3-spacing-spacing-4xl)] lg:pl-[var(--3-spacing-spacing-4xl)] relative">
+      <section className="flex flex-col w-full lg:w-[600px] items-start gap-4 md:gap-6 lg:gap-[var(--3-spacing-spacing-3xl)] p-4 md:p-6 lg:pt-[var(--3-spacing-spacing-4xl)] lg:pr-[var(--3-spacing-spacing-4xl)] lg:pb-[var(--3-spacing-spacing-4xl)] lg:pl-[var(--3-spacing-spacing-4xl)] relative">
         {/* Category Badge */}
         <div className="inline-flex items-start gap-2 md:gap-[var(--3-spacing-spacing-md)] relative">
           <div className="inline-flex items-center justify-center gap-2 md:gap-[var(--3-spacing-spacing-xs)] px-3 md:px-3.5 py-2 md:py-2.5 relative rounded-full overflow-hidden bg-[linear-gradient(0deg,rgba(79,26,214,0.08)_0%,rgba(153,153,153,0.1)_100%)] bg-nubien-framer-website-color-violet-47-8 border-1-color-modes-component-colors-components-buttons-secondary-button-secondary-border">
@@ -217,17 +239,20 @@ export const ExtraServicesCard: React.FC<ExtraServicesCardProps> = ({
         </div>
 
         {/* CTA Button */}
-        <div className="inline-flex items-start gap-2 relative">
-          <PrimaryCTA ariaLabel="Get started with Extra Services">
+        <div className="w-full md:w-auto">
+          <PrimaryCTA 
+            ariaLabel="Get started with Extra Services"
+            className="w-full md:w-auto"
+          >
             Get Started
           </PrimaryCTA>
         </div>
       </section>
 
-      {/* Right Side - Service Details UI - Hidden on mobile, visible on tablet+ */}
+      {/* Image Section - Desktop only (right side) */}
       <aside
-        className="hidden md:flex relative flex-1 self-stretch rounded-[0px_0px_16px_16px] md:rounded-[0px_20px_20px_0px] lg:rounded-[0px_40px_40px_0px] overflow-hidden border-l [border-left-style:solid] border-1-color-modes-component-colors-utility-purple-utility-purple-100"
-        aria-label="Service selection interface"
+        className="hidden lg:flex relative flex-1 self-stretch rounded-[0px_40px_40px_0px] overflow-hidden border-l [border-left-style:solid] border-1-color-modes-component-colors-utility-purple-utility-purple-100"
+        aria-label="Extra services preview"
       >
         <div className="relative w-full h-full">
           <img
@@ -236,101 +261,12 @@ export const ExtraServicesCard: React.FC<ExtraServicesCardProps> = ({
             src="/img/111-1.png"
             aria-hidden="true"
           />
-
-          {/* Service Selection UI Overlay */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[338px] h-[400px] flex flex-col gap-[18.6px]">
-            {serviceDetails.map((service, index) => (
-              <div
-                key={service.id}
-                className={`flex items-center gap-[7.53px] ${service.marginLeft} w-[303.86px] h-[62.97px] relative ${service.rotation || ""}`}
-              >
-                {/* Blur effects for first two items */}
-                {(index === 0 || index === 1) && (
-                  <div className="absolute top-0 left-0 w-[304px] h-[107px]">
-                    <div className="top-[calc(50.00%_-_9px)] left-7 w-[276px] rounded-[138.12px/31.39px] absolute h-[63px] blur-[3.57px] [background:radial-gradient(50%_50%_at_50%_50%,rgba(144,85,229,0.12)_0%,rgba(144,85,229,0)_100%)]" />
-                    <div className={`top-[calc(50.00%_-_53px)] ${index === 0 ? 'left-0' : 'left-px'} w-[63px] rounded-[31.39px] absolute h-[63px] blur-[3.57px] [background:radial-gradient(50%_50%_at_50%_50%,rgba(144,85,229,0.12)_0%,rgba(144,85,229,0)_100%)]`} />
-                  </div>
-                )}
-
-                {/* Checkbox/Plus Icon */}
-                <div
-                  className={`${
-                    service.isSelected
-                      ? "relative w-[20.09px] h-[20.09px] rounded-[8369.97px] overflow-hidden shadow-shadows-shadow-xs-skeuomorphic bg-[linear-gradient(90deg,rgba(29,24,52,1)_0%,rgba(86,71,154,1)_100%)] border-[color:var(--1-color-modes-component-colors-components-icons-featured-icons-modern-featured-icon-modern-border)]"
-                      : "w-[20.09px] h-[20.09px] bg-white rounded-[8369.97px] border-[0.63px] border-solid border-incorpifyprimary shadow-shadows-shadow-xs-skeuomorphic relative overflow-hidden"
-                  }`}
-                >
-                  <img
-                    className="absolute top-[5px] left-[5px] w-2.5 h-2.5"
-                    alt={service.isSelected ? "Check" : "Plus"}
-                    src={
-                      service.isSelected
-                        ? "/img/check-1.svg"
-                        : index === 2
-                          ? "/img/plus-2.svg"
-                          : index === 3
-                            ? "/img/plus-1.svg"
-                            : "/img/plus-2.svg"
-                    }
-                  />
-                </div>
-
-                {/* Service Card */}
-                <div
-                  className={`${
-                    service.isSelected
-                      ? index === 0
-                        ? "mt-[-0.63px] mb-[-0.63px] flex w-[277.49px] items-start gap-[var(--3-spacing-spacing-xs)] pt-[var(--3-spacing-spacing-xl)] pr-[var(--3-spacing-spacing-xl)] pb-[var(--3-spacing-spacing-xl)] pl-[var(--3-spacing-spacing-xl)] relative mr-[-0.63px] bg-white rounded-[10.04px] border-[none] shadow-[0px_2.51px_3.77px_-1.26px_#10182808,0px_7.53px_10.04px_-2.51px_#10182814] before:content-[''] before:absolute before:inset-0 before:p-[0.63px] before:rounded-[10.04px] before:[background:linear-gradient(90deg,rgba(29,24,52,1)_0%,rgba(86,71,154,1)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none"
-                        : "mt-[-0.81px] mb-[-0.81px] flex w-[277.49px] items-start gap-[var(--3-spacing-spacing-xs)] pt-[var(--3-spacing-spacing-xl)] pr-[var(--3-spacing-spacing-xl)] pb-[var(--3-spacing-spacing-xl)] pl-[var(--3-spacing-spacing-xl)] relative mr-[-0.63px] bg-white rounded-[10.04px] border-[none] shadow-[0px_2.51px_3.77px_-1.26px_#10182808,0px_7.53px_10.04px_-2.51px_#10182814] before:content-[''] before:absolute before:inset-0 before:p-[0.63px] before:rounded-[10.04px] before:[background:linear-gradient(90deg,rgba(29,24,52,1)_0%,rgba(86,71,154,1)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none"
-                      : "flex w-[276.24px] items-start gap-[var(--3-spacing-spacing-xs)] pt-[var(--3-spacing-spacing-xl)] pr-[var(--3-spacing-spacing-xl)] pb-[var(--3-spacing-spacing-xl)] pl-[var(--3-spacing-spacing-xl)] relative mt-[-0.19px] mb-[-0.19px] bg-white rounded-[10.04px] border-[0.63px] border-solid border-1-color-modes-colors-border-border-secondary-duplicate"
-                  }`}
-                >
-                  <div className="flex items-start gap-[var(--3-spacing-spacing-lg)] relative flex-1 grow">
-                    <div
-                      className={`w-[25.11px] h-[25.11px] ${
-                        service.isSelected
-                          ? "bg-1-color-modes-colors-background-bg-brand-secondary rounded-[6.7px] shadow-[0px_0.63px_1.26px_#1018280d] relative overflow-hidden border-1-color-modes-colors-border-border-secondary"
-                          : "bg-gray-50 rounded-[6.7px] border-[0.63px] border-solid border-gray-200 shadow-[0px_0.63px_1.26px_#1018280d] relative overflow-hidden"
-                      }`}
-                    >
-                      <img
-                        className="absolute top-1.5 left-1.5 w-[13px] h-[13px]"
-                        alt={service.iconAlt}
-                        src={service.icon}
-                      />
-                    </div>
-
-                    <div className="flex flex-col items-start gap-[var(--3-spacing-spacing-xxs)] relative flex-1 grow">
-                      <div className="inline-flex items-start gap-[var(--3-spacing-spacing-sm)] relative flex-[0_0_auto]">
-                        <div className="relative w-fit mt-[-0.63px] [font-family:'Inter',Helvetica] font-semibold text-incorpify-primary text-[10px] tracking-[0] leading-[15.1px] whitespace-nowrap">
-                          {service.title}
-                        </div>
-                        {service.price && (
-                          <div
-                            className={`relative w-fit mt-[-0.63px] [font-family:'Inter',Helvetica] font-semibold ${
-                              service.isSelected
-                                ? "text-incorpify-primary"
-                                : "text-gray-600"
-                            } text-[10px] tracking-[0] leading-[15.1px] whitespace-nowrap`}
-                          >
-                            {service.price}
-                          </div>
-                        )}
-                      </div>
-                      <p
-                        className={`relative self-stretch [font-family:'Inter',Helvetica] font-normal ${
-                          service.isSelected
-                            ? "text-gray-700"
-                            : "text-gray-600"
-                        } text-[8.8px] tracking-[0] leading-[12.6px]`}
-                      >
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center py-12 px-8">
+            <img
+              className="w-full h-auto max-h-full object-contain"
+              alt="Extra services"
+              src="/img/our-features/more.png"
+            />
           </div>
         </div>
       </aside>

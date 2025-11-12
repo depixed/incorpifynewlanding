@@ -6,9 +6,7 @@ import Link from "next/link";
 
 const navigationItems = [
   { label: "Services", hasDropdown: true },
-  { label: "Pricing", hasDropdown: false },
   { label: "About", hasDropdown: false },
-  { label: "Resources", hasDropdown: true },
 ];
 
 const servicesList = [

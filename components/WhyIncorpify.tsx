@@ -48,7 +48,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         className={`relative w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex-shrink-0 ${bgClass} rounded-full overflow-hidden border-[none] shadow-shadows-shadow-xs-skeuomorphic before:content-[''] before:absolute before:inset-0 before:p-0.5 before:rounded-full before:[background:linear-gradient(180deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none`}
       >
         <img
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6"
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 transition-all duration-300 ${
+            isActive 
+              ? "brightness-0 invert filter" 
+              : "brightness-0 opacity-40 filter"
+          }`}
           alt={iconAlt}
           src={icon}
         />
@@ -176,9 +180,9 @@ export const WhyIncorpify = (): JSX.Element => {
 
       {/* Content Section */}
       <div className="flex flex-col lg:flex-row w-full max-w-[1280px] items-start gap-6 md:gap-8 lg:gap-[var(--3-spacing-spacing-4xl-duplicate)] relative z-10">
-        {/* Dynamic Image with Background - Hidden on mobile, visible on tablet+ */}
-        <div className="hidden md:block relative w-full lg:w-[616px] lg:flex-shrink-0">
-          <div className="relative w-full min-h-[616px]">
+        {/* Dynamic Image with Background - Visible on all screens */}
+        <div className="relative w-full lg:w-[616px] lg:flex-shrink-0">
+          <div className="relative w-full min-h-[300px] md:min-h-[400px] lg:min-h-[616px]">
             {/* Background Image (if exists) - Full Height */}
             {activeFeature.background && (
               <div className="absolute inset-0 z-0">
@@ -257,12 +261,22 @@ export const WhyIncorpify = (): JSX.Element => {
                 </span>
               </span>
 
-              <img
+              <svg
                 className="relative w-5 h-5 md:w-6 md:h-6"
-                alt=""
-                src="/img/chevron-right.svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
-              />
+              >
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-incorpify-primary"
+                />
+              </svg>
             </button>
           </div>
         </div>

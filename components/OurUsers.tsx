@@ -46,8 +46,8 @@ export const OurUsers = (): JSX.Element => {
         aria-hidden="true"
       />
 
-      <div className="flex flex-col items-center gap-8 md:gap-10 lg:gap-[var(--3-spacing-spacing-7xl)] relative w-full max-w-[1280px]">
-        <header className="flex flex-col w-full max-w-[600px] items-center gap-4 md:gap-5 lg:gap-[var(--3-spacing-spacing-3xl)] relative">
+      <div className="flex flex-col items-center gap-8 md:gap-10 lg:gap-[var(--3-spacing-spacing-7xl)] relative w-full max-w-[1280px] mx-auto">
+        <header className="flex flex-col w-full max-w-[600px] items-center gap-4 md:gap-5 lg:gap-[var(--3-spacing-spacing-3xl)] relative mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center justify-center gap-2 md:gap-3 lg:gap-[var(--3-spacing-spacing-md)] py-2 md:py-2.5 lg:pt-[var(--3-spacing-spacing-md)] px-3 md:px-4 lg:pr-[var(--3-spacing-spacing-lg)] lg:pb-[var(--3-spacing-spacing-md)] lg:pl-[var(--3-spacing-spacing-lg)] relative rounded-[40px] overflow-hidden border border-solid border-[#e4e7ec33] bg-[linear-gradient(0deg,rgba(79,26,214,0.08)_0%,rgba(153,153,153,0.1)_100%)] bg-nubien-framer-website-color-violet-47-8">
             <img
@@ -81,23 +81,34 @@ export const OurUsers = (): JSX.Element => {
 
         {/* User Cards Grid */}
         <div
-          className="flex flex-col md:flex-row h-auto md:h-[360px] items-stretch gap-4 md:gap-6 relative w-full"
+          className="flex flex-col md:flex-row h-auto md:h-[360px] items-center md:items-stretch justify-center gap-4 md:gap-6 relative w-full max-w-[1000px] mx-auto"
           role="list"
         >
           {userCards.map((card) => (
             <div
               key={card.id}
-              className="relative flex-1 self-stretch grow"
+              className="relative md:flex-1 md:grow w-full md:w-auto max-w-[280px] md:max-w-[240px] h-[400px] md:h-auto"
               role="listitem"
             >
-              <Image
-                className="w-full h-full object-cover rounded-xl md:rounded-2xl"
-                alt={card.alt}
-                src={card.image}
-                width={300}
-                height={360}
-                priority
-              />
+              <div className="relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden">
+                <Image
+                  className="w-full h-full object-cover"
+                  alt={card.alt}
+                  src={card.image}
+                  width={240}
+                  height={360}
+                  priority
+                />
+                {/* Text Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent p-4 md:p-5 rounded-b-xl md:rounded-b-2xl">
+                  <h3 className="text-white font-semibold text-base md:text-lg mb-1.5 md:mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-white/90 text-sm md:text-base leading-relaxed">
+                    {card.description}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

@@ -51,15 +51,39 @@ export const ServiceFeatureCard: React.FC<ServiceFeatureCardProps> = ({
 
   return (
     <article
-      className="absolute top-0 left-0 w-full h-[550px] md:h-[600px] lg:h-[468px] flex flex-col lg:flex-row items-stretch bg-white rounded-2xl lg:rounded-[32px] border border-solid border-1-color-modes-colors-foreground-fg-white shadow-[inset_0px_0px_1px_1px_#ffffff,0px_20px_20px_-4px_#00000003,0px_6.38px_6.38px_-3px_#00000008,0px_2.41px_2.41px_-2px_#0000000a,0px_0.8px_0.8px_-1px_#0000000a,0px_8px_8px_-4px_#10182808] overflow-hidden"
+      className="absolute top-0 left-0 w-full h-auto md:h-auto lg:h-[468px] flex flex-col lg:flex-row items-stretch bg-white rounded-2xl lg:rounded-[32px] border border-solid border-1-color-modes-colors-foreground-fg-white shadow-[inset_0px_0px_1px_1px_#ffffff,0px_20px_20px_-4px_#00000003,0px_6.38px_6.38px_-3px_#00000008,0px_2.41px_2.41px_-2px_#0000000a,0px_0.8px_0.8px_-1px_#0000000a,0px_8px_8px_-4px_#10182808] overflow-hidden"
       style={{
         transform: `translateY(${finalTranslateY}vh)`,
         zIndex: zIndex,
         transition: 'transform 0.1s linear',
       }}
     >
+      {/* Image Section - Top on mobile, right side on desktop */}
+      <aside
+        className="lg:hidden relative w-full h-[220px] md:h-[280px] rounded-[16px_16px_0px_0px] overflow-hidden border-b [border-style:solid] border-1-color-modes-component-colors-utility-purple-utility-purple-100"
+        aria-label={`${category} dashboard preview`}
+      >
+        <div className="relative w-full h-full">
+          <img
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt=""
+            src={backgroundImage}
+            aria-hidden="true"
+          />
+
+          <Image
+            className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] h-auto"
+            alt={`Dashboard interface showing ${category} features`}
+            src={foregroundImage}
+            width={601}
+            height={527}
+            priority
+          />
+        </div>
+      </aside>
+
       {/* Content Section */}
-      <section className="flex flex-col w-full lg:w-[600px] items-start gap-6 md:gap-7 lg:gap-[var(--3-spacing-spacing-3xl)] p-6 md:p-8 lg:pt-[var(--3-spacing-spacing-4xl)] lg:pr-[var(--3-spacing-spacing-4xl)] lg:pb-[var(--3-spacing-spacing-4xl)] lg:pl-[var(--3-spacing-spacing-4xl)] relative">
+      <section className="flex flex-col w-full lg:w-[600px] items-start gap-4 md:gap-6 lg:gap-[var(--3-spacing-spacing-3xl)] p-4 md:p-6 lg:pt-[var(--3-spacing-spacing-4xl)] lg:pr-[var(--3-spacing-spacing-4xl)] lg:pb-[var(--3-spacing-spacing-4xl)] lg:pl-[var(--3-spacing-spacing-4xl)] relative">
         {/* Category Badge */}
         <div className="inline-flex items-start gap-2 md:gap-[var(--3-spacing-spacing-md)] relative">
           <div className="inline-flex items-center justify-center gap-2 md:gap-[var(--3-spacing-spacing-xs)] px-3 md:px-3.5 py-2 md:py-2.5 relative rounded-full overflow-hidden bg-[linear-gradient(0deg,rgba(79,26,214,0.08)_0%,rgba(153,153,153,0.1)_100%)] bg-nubien-framer-website-color-violet-47-8 border-1-color-modes-component-colors-components-buttons-secondary-button-secondary-border">
@@ -147,16 +171,19 @@ export const ServiceFeatureCard: React.FC<ServiceFeatureCardProps> = ({
         </div>
 
         {/* CTA Button */}
-        <div className="inline-flex items-start gap-2 relative">
-          <PrimaryCTA ariaLabel={`Get started with ${category}`}>
+        <div className="w-full md:w-auto">
+          <PrimaryCTA 
+            ariaLabel={`Get started with ${category}`}
+            className="w-full md:w-auto"
+          >
             {ctaText}
           </PrimaryCTA>
         </div>
       </section>
 
-      {/* Image Section - Hidden on mobile, visible on tablet+ */}
+      {/* Image Section - Desktop only (right side) */}
       <aside
-        className="hidden md:flex relative flex-1 self-stretch rounded-[0px_0px_16px_16px] md:rounded-[0px_20px_20px_0px] lg:rounded-[0px_40px_40px_0px] overflow-hidden border-l [border-left-style:solid] border-1-color-modes-component-colors-utility-purple-utility-purple-100"
+        className="hidden lg:flex relative flex-1 self-stretch rounded-[0px_40px_40px_0px] overflow-hidden border-l [border-left-style:solid] border-1-color-modes-component-colors-utility-purple-utility-purple-100"
         aria-label={`${category} dashboard preview`}
       >
         <div className="relative w-full h-full">
@@ -168,7 +195,7 @@ export const ServiceFeatureCard: React.FC<ServiceFeatureCardProps> = ({
           />
 
           <Image
-            className="absolute top-1/2 -translate-y-1/2 right-0 md:-right-[80px] w-[80%] md:w-[601px] h-auto"
+            className="absolute top-1/2 -translate-y-1/2 right-0 -right-[80px] w-[601px] h-auto"
             alt={`Dashboard interface showing ${category} features`}
             src={foregroundImage}
             width={601}

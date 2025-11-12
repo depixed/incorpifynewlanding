@@ -16,42 +16,42 @@ export const FAQ = (): JSX.Element => {
       id: 1,
       question: "What is Incorpify?",
       answer:
-        "Incorpify is a business services platform that simplifies company setup and ongoing operations in the UAE and Saudi Arabia. It combines smart technology with expert support to reduce complexity and cost.",
+        "Incorpify is a business services platform that simplifies company setup and ongoing operations in the UAE and Saudi Arabia. We combine smart technology with expert support to reduce complexity and cost. We service clients in other GCC countries and will include these countries in our platform soon.",
     },
     {
       id: 2,
       question: "Who uses Incorpify?",
-      answer: "Incorpify is designed for startups, consultants, SMEs, and holding structures looking to establish or manage their business operations in the GCC region.",
+      answer: "In short, business owners. Over 130 clients trust us today, including startups, consultants, SMEs and multinationals expanding into the GCC.",
     },
     {
       id: 3,
       question: "Is Incorpify just for small businesses?",
-      answer: "No, Incorpify serves businesses of all sizes, from solo entrepreneurs to large enterprises with complex holding structures.",
+      answer: "No. We support both early-stage startups and large corporations relocating or expanding into the GCC. We offer scalable solutions and local expertise.",
     },
     {
       id: 4,
       question: "What services do you provide?",
-      answer: "We provide comprehensive business services including company incorporation, accounting, tax filing, visa processing, banking support, insurance, payroll, legal services, and more.",
+      answer: "We provide a whole suite of business services with a track record of over 20 years. These include end-to-end support across incorporation, accounting, tax, legal, insurance, banking, and immigration. Discover all our services in their dedicated sections or directly ask our chatbot for what you need.",
     },
     {
       id: 5,
       question: "How is Incorpify different from a traditional consultancy?",
-      answer: "Incorpify combines AI-powered automation with expert human support, offering faster service delivery, transparent pricing, and a centralized dashboard to manage all your business needs.",
+      answer: "We use AI to streamline workflows, speed up processes, and reduce manual errors. You get to use AI to help you manage your company better, while staying informed and compliant at all times. While we take pride in our technology, every client is backed by experienced professionals that you can reach out to at any time.",
     },
     {
       id: 6,
       question: "Do I still get a real person to talk to?",
-      answer: "Absolutely! While we use technology to streamline processes, our expert team is always available to provide personalized support and guidance.",
+      answer: "Yes. Our platform is supported by a dedicated team of experts who monitor your progress, offer tailored advisory for your needs, and ensure high service quality.",
     },
     {
       id: 7,
       question: "Is this solution compliant with local regulations?",
-      answer: "Yes, all our services are fully compliant with UAE and Saudi Arabia regulations. Our team stays updated on all regulatory changes to ensure your business remains compliant.",
+      answer: "Fully. We stay up-to-date with all local rules and maintain direct relationships with relevant authorities to keep you compliant from day one.",
     },
     {
       id: 8,
       question: "Can you support multiple jurisdictions?",
-      answer: "Yes, we currently support business operations in the UAE and Saudi Arabia, with expertise in managing cross-border entities and multi-jurisdiction compliance.",
+      answer: "Yes. Our services cover all major free zones, mainland setups, and offshore structures across the UAE and KSA. We also service Qatar, Kuwait, Oman and Bahrain, however not yet with the support of our AI chatbot.",
     },
   ];
 

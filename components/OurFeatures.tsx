@@ -416,10 +416,10 @@ export const OurFeatures = (): JSX.Element => {
               })}
             </div>
 
-            {/* Skip Button */}
+            {/* Skip Button - Hidden on mobile */}
             <button
               onClick={handleSkip}
-              className="gap-2.5 py-3 md:pt-[var(--3-spacing-spacing-xl)] md:pb-[var(--3-spacing-spacing-xl)] px-5 md:px-[22px] rounded-lg md:rounded-[var(--2-radius-radius-lg)] inline-flex items-center justify-center relative overflow-hidden hover:bg-gray-50 transition-colors cursor-pointer z-30"
+              className="hidden md:inline-flex gap-2.5 py-3 md:pt-[var(--3-spacing-spacing-xl)] md:pb-[var(--3-spacing-spacing-xl)] px-5 md:px-[22px] rounded-lg md:rounded-[var(--2-radius-radius-lg)] items-center justify-center relative overflow-hidden hover:bg-gray-50 transition-colors cursor-pointer z-30"
               type="button"
               aria-label="Skip to next section"
             >
